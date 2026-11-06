@@ -1,0 +1,28 @@
+{
+  "submission_id": "SUB-2026-0011",
+  "named_insured": "Shelton Group",
+  "dba": "PLC",
+  "fein": "70-8391072",
+  "effective_date": "2027-01-22",
+  "business_description": "Innovative eco-centric ability",
+  "years_in_business": 1,
+  "locations": [
+    {
+      "location_id": "LOC-1",
+      "address": "64425 Isaiah Circle",
+      "city": "Donaldville",
+      "province": "ON",
+      "year_built": 1991,
+      "construction": "Frame",
+      "occupancy": "Warehouse / office",
+      "building_tiv": 2502110,
+      "contents_tiv": 582927,
+      "deductible": 11138
+    }
+  ],
+  "payroll": 1538282,
+  "revenue": 936862,
+  "employees": 145,
+  "prior_carrier": "Gibson and Sons",
+  "losses": []
+}

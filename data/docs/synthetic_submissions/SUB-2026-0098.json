@@ -1,0 +1,28 @@
+{
+  "submission_id": "SUB-2026-0098",
+  "named_insured": "Patterson, Gibson and Humphrey",
+  "dba": "Group",
+  "fein": "36-5965285",
+  "effective_date": "2027-01-01",
+  "business_description": "Down-sized 5thgeneration middleware",
+  "years_in_business": 32,
+  "locations": [
+    {
+      "location_id": "LOC-1",
+      "address": "5321 Douglas Estates",
+      "city": "South Garymouth",
+      "province": "ON",
+      "year_built": 1989,
+      "construction": "Frame",
+      "occupancy": "Warehouse / office",
+      "building_tiv": 1855015,
+      "contents_tiv": 949637,
+      "deductible": 12534
+    }
+  ],
+  "payroll": 2603983,
+  "revenue": 9610229,
+  "employees": 126,
+  "prior_carrier": "Levy-Evans",
+  "losses": []
+}

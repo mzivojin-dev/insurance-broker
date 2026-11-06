@@ -1,0 +1,38 @@
+{
+  "submission_id": "SUB-2026-0071",
+  "named_insured": "Ashley-Gallagher",
+  "dba": "and Sons",
+  "fein": "43-1033144",
+  "effective_date": "2026-12-29",
+  "business_description": "Customizable web-enabled collaboration",
+  "years_in_business": 5,
+  "locations": [
+    {
+      "location_id": "LOC-1",
+      "address": "37109 Sanchez Roads",
+      "city": "Smithland",
+      "province": "ON",
+      "year_built": 1984,
+      "construction": "Frame",
+      "occupancy": "Warehouse / office",
+      "building_tiv": 3821793,
+      "contents_tiv": 339229,
+      "deductible": 16163
+    }
+  ],
+  "payroll": 2986089,
+  "revenue": 9410375,
+  "employees": 30,
+  "prior_carrier": "Kennedy LLC",
+  "losses": [
+    {
+      "policy_year": "2025",
+      "claim_date": "2024-04-27",
+      "claim_number": "CLM-94021",
+      "status": "Closed",
+      "paid": 30432,
+      "reserve": 46370,
+      "description": "Placeat expedita eos recusandae omnis."
+    }
+  ]
+}

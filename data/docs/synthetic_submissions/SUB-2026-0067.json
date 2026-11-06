@@ -1,0 +1,38 @@
+{
+  "submission_id": "SUB-2026-0067",
+  "named_insured": "Wallace-Perkins",
+  "dba": "Group",
+  "fein": "27-1367175",
+  "effective_date": "2027-02-01",
+  "business_description": "Operative secondary archive",
+  "years_in_business": 17,
+  "locations": [
+    {
+      "location_id": "LOC-1",
+      "address": "378 Vanessa Mount Suite 734",
+      "city": "East Aprilburgh",
+      "province": "ON",
+      "year_built": 2018,
+      "construction": "Frame",
+      "occupancy": "Warehouse / office",
+      "building_tiv": 3886233,
+      "contents_tiv": 644785,
+      "deductible": 4548
+    }
+  ],
+  "payroll": 2236860,
+  "revenue": 1400133,
+  "employees": 107,
+  "prior_carrier": "Cobb LLC",
+  "losses": [
+    {
+      "policy_year": "2025",
+      "claim_date": "2026-06-09",
+      "claim_number": "CLM-35997",
+      "status": "Open",
+      "paid": 129692,
+      "reserve": 4849,
+      "description": "Dignissimos eius quisquam alias rem amet doloremque ea."
+    }
+  ]
+}

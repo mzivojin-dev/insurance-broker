@@ -1,0 +1,28 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Submission",
+  "type": "object",
+  "required": ["named_insured", "fein", "effective_date", "lines_of_business"],
+  "properties": {
+    "named_insured": {"type": "string", "minLength": 1},
+    "fein": {"type": ["string", "null"], "pattern": "^\\d{2}-\\d{7}$"},
+    "effective_date": {"type": "string", "format": "date"},
+    "lines_of_business": {
+      "type": "array",
+      "items": {"enum": ["general_liability", "commercial_property", "commercial_auto", "workers_comp", "umbrella"]},
+      "minItems": 1
+    },
+    "claims": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["date_of_loss", "paid", "status"],
+        "properties": {
+          "date_of_loss": {"type": "string", "format": "date"},
+          "paid": {"type": "number"},
+          "status": {"enum": ["open", "closed"]}
+        }
+      }
+    }
+  }
+}

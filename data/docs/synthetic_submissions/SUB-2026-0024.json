@@ -1,0 +1,38 @@
+{
+  "submission_id": "SUB-2026-0024",
+  "named_insured": "Dunn Ltd",
+  "dba": "Ltd",
+  "fein": "90-4732126",
+  "effective_date": "2026-11-12",
+  "business_description": "Implemented motivating application",
+  "years_in_business": 32,
+  "locations": [
+    {
+      "location_id": "LOC-1",
+      "address": "93716 Lisa Fields Apt. 813",
+      "city": "Longberg",
+      "province": "ON",
+      "year_built": 2009,
+      "construction": "Masonry",
+      "occupancy": "Warehouse / office",
+      "building_tiv": 4644921,
+      "contents_tiv": 292716,
+      "deductible": 18630
+    }
+  ],
+  "payroll": 630991,
+  "revenue": 11510087,
+  "employees": 183,
+  "prior_carrier": "Murray Inc",
+  "losses": [
+    {
+      "policy_year": "2022",
+      "claim_date": "2024-02-12",
+      "claim_number": "CLM-79171",
+      "status": "Open",
+      "paid": 72044,
+      "reserve": 36445,
+      "description": "Soluta sit laudantium temporibus doloribus quibusdam repellendus nisi delectus necessitatibus."
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "submission_id": "SUB-2026-0087",
+  "named_insured": "Willis Ltd",
+  "dba": "LLC",
+  "fein": "93-3934590",
+  "effective_date": "2026-12-20",
+  "business_description": "Profit-focused even-keeled access",
+  "years_in_business": 20,
+  "locations": [
+    {
+      "location_id": "LOC-1",
+      "address": "825 Graves Tunnel",
+      "city": "Port Vincent",
+      "province": "ON",
+      "year_built": 1997,
+      "construction": "Steel",
+      "occupancy": "Warehouse / office",
+      "building_tiv": 1988741,
+      "contents_tiv": 680363,
+      "deductible": 12053
+    }
+  ],
+  "payroll": 928479,
+  "revenue": 6840288,
+  "employees": 14,
+  "prior_carrier": "Mullen LLC",
+  "losses": []
+}

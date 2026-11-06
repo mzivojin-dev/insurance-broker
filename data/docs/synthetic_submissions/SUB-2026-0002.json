@@ -1,0 +1,28 @@
+{
+  "submission_id": "SUB-2026-0002",
+  "named_insured": "Tanner, Hudson and Trevino",
+  "dba": "Ltd",
+  "fein": "24-9189673",
+  "effective_date": "2026-11-09",
+  "business_description": "Open-architected real-time model",
+  "years_in_business": 4,
+  "locations": [
+    {
+      "location_id": "LOC-1",
+      "address": "48799 Olivia Meadow",
+      "city": "Jillberg",
+      "province": "ON",
+      "year_built": 2003,
+      "construction": "Frame",
+      "occupancy": "Warehouse / office",
+      "building_tiv": 2492494,
+      "contents_tiv": 494379,
+      "deductible": 19762
+    }
+  ],
+  "payroll": 1072191,
+  "revenue": 1200392,
+  "employees": 225,
+  "prior_carrier": "Carter-Gallegos",
+  "losses": []
+}

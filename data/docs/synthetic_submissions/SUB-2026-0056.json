@@ -1,0 +1,38 @@
+{
+  "submission_id": "SUB-2026-0056",
+  "named_insured": "Hughes-Fernandez",
+  "dba": "Group",
+  "fein": "63-8894917",
+  "effective_date": "2026-12-19",
+  "business_description": "Monitored radical knowledgebase",
+  "years_in_business": 10,
+  "locations": [
+    {
+      "location_id": "LOC-1",
+      "address": "6290 Karen Fields Suite 612",
+      "city": "Rothland",
+      "province": "ON",
+      "year_built": 2003,
+      "construction": "Frame",
+      "occupancy": "Warehouse / office",
+      "building_tiv": 427355,
+      "contents_tiv": 898186,
+      "deductible": 13397
+    }
+  ],
+  "payroll": 1071200,
+  "revenue": 7196138,
+  "employees": 185,
+  "prior_carrier": "Floyd PLC",
+  "losses": [
+    {
+      "policy_year": "2024",
+      "claim_date": "2025-09-20",
+      "claim_number": "CLM-61336",
+      "status": "Open",
+      "paid": 119039,
+      "reserve": 58106,
+      "description": "Neque placeat deleniti possimus hic mollitia quas."
+    }
+  ]
+}

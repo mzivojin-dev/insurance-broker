@@ -1,0 +1,38 @@
+{
+  "submission_id": "SUB-2026-0058",
+  "named_insured": "Leon, Patel and Martinez",
+  "dba": "Inc",
+  "fein": "53-7103357",
+  "effective_date": "2026-12-08",
+  "business_description": "Implemented scalable system engine",
+  "years_in_business": 29,
+  "locations": [
+    {
+      "location_id": "LOC-1",
+      "address": "8269 Wood Radial",
+      "city": "Fryfort",
+      "province": "ON",
+      "year_built": 1970,
+      "construction": "Masonry",
+      "occupancy": "Warehouse / office",
+      "building_tiv": 1714888,
+      "contents_tiv": 266521,
+      "deductible": 16710
+    }
+  ],
+  "payroll": 2386292,
+  "revenue": 8217002,
+  "employees": 236,
+  "prior_carrier": "Casey-Davis",
+  "losses": [
+    {
+      "policy_year": "2022",
+      "claim_date": "2025-04-16",
+      "claim_number": "CLM-34227",
+      "status": "Closed",
+      "paid": 16930,
+      "reserve": 33368,
+      "description": "Eveniet exercitationem laudantium ea odit alias."
+    }
+  ]
+}

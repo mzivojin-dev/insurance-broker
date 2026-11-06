@@ -1,0 +1,38 @@
+{
+  "submission_id": "SUB-2026-0077",
+  "named_insured": "Pearson LLC",
+  "dba": "LLC",
+  "fein": "60-3944227",
+  "effective_date": "2026-12-23",
+  "business_description": "Open-architected logistical structure",
+  "years_in_business": 34,
+  "locations": [
+    {
+      "location_id": "LOC-1",
+      "address": "394 Jones Corner Apt. 353",
+      "city": "Carpenterchester",
+      "province": "ON",
+      "year_built": 1971,
+      "construction": "Frame",
+      "occupancy": "Warehouse / office",
+      "building_tiv": 4799101,
+      "contents_tiv": 329198,
+      "deductible": 16367
+    }
+  ],
+  "payroll": 266589,
+  "revenue": 8071470,
+  "employees": 245,
+  "prior_carrier": "White Inc",
+  "losses": [
+    {
+      "policy_year": "2024",
+      "claim_date": "2024-08-19",
+      "claim_number": "CLM-86312",
+      "status": "Closed",
+      "paid": 72727,
+      "reserve": 3932,
+      "description": "Distinctio corrupti labore ducimus alias tempora tenetur eligendi."
+    }
+  ]
+}

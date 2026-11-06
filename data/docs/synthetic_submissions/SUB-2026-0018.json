@@ -1,0 +1,28 @@
+{
+  "submission_id": "SUB-2026-0018",
+  "named_insured": "Clark LLC",
+  "dba": "and Sons",
+  "fein": "88-6807238",
+  "effective_date": "2027-01-08",
+  "business_description": "Streamlined tangible circuit",
+  "years_in_business": 39,
+  "locations": [
+    {
+      "location_id": "LOC-1",
+      "address": "6415 Cochran Station Apt. 566",
+      "city": "East Melissa",
+      "province": "ON",
+      "year_built": 1973,
+      "construction": "Steel",
+      "occupancy": "Warehouse / office",
+      "building_tiv": 325922,
+      "contents_tiv": 466107,
+      "deductible": 18148
+    }
+  ],
+  "payroll": 3853818,
+  "revenue": 1379034,
+  "employees": 196,
+  "prior_carrier": "Brown Ltd",
+  "losses": []
+}

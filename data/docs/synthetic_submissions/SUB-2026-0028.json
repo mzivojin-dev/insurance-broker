@@ -1,0 +1,28 @@
+{
+  "submission_id": "SUB-2026-0028",
+  "named_insured": "Wright-Mcintosh",
+  "dba": "and Sons",
+  "fein": "44-2560684",
+  "effective_date": "2026-12-24",
+  "business_description": "Expanded neutral hierarchy",
+  "years_in_business": 5,
+  "locations": [
+    {
+      "location_id": "LOC-1",
+      "address": "127 Hayes Centers Apt. 343",
+      "city": "South Hunterland",
+      "province": "ON",
+      "year_built": 2017,
+      "construction": "Steel",
+      "occupancy": "Warehouse / office",
+      "building_tiv": 3980718,
+      "contents_tiv": 720976,
+      "deductible": 20174
+    }
+  ],
+  "payroll": 853282,
+  "revenue": 8786220,
+  "employees": 105,
+  "prior_carrier": "Perez and Sons",
+  "losses": []
+}

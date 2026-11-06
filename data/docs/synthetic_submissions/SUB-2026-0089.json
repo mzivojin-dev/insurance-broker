@@ -1,0 +1,38 @@
+{
+  "submission_id": "SUB-2026-0089",
+  "named_insured": "Lewis-Moore",
+  "dba": "Ltd",
+  "fein": "92-4752144",
+  "effective_date": "2026-11-17",
+  "business_description": "Synchronized well-modulated encoding",
+  "years_in_business": 4,
+  "locations": [
+    {
+      "location_id": "LOC-1",
+      "address": "90991 Garcia Wall",
+      "city": "New Michaelborough",
+      "province": "ON",
+      "year_built": 2017,
+      "construction": "Masonry",
+      "occupancy": "Warehouse / office",
+      "building_tiv": 2774916,
+      "contents_tiv": 966670,
+      "deductible": 2379
+    }
+  ],
+  "payroll": 1519440,
+  "revenue": 3431780,
+  "employees": 50,
+  "prior_carrier": "Singleton and Sons",
+  "losses": [
+    {
+      "policy_year": "2025",
+      "claim_date": "2026-08-02",
+      "claim_number": "CLM-58373",
+      "status": "Closed",
+      "paid": 80908,
+      "reserve": 32420,
+      "description": "Illum impedit animi odit velit consectetur aperiam."
+    }
+  ]
+}

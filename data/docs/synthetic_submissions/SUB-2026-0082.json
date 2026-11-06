@@ -1,0 +1,28 @@
+{
+  "submission_id": "SUB-2026-0082",
+  "named_insured": "Mccullough, Nguyen and Vaughan",
+  "dba": "PLC",
+  "fein": "95-6424419",
+  "effective_date": "2027-01-12",
+  "business_description": "Reverse-engineered encompassing knowledge user",
+  "years_in_business": 21,
+  "locations": [
+    {
+      "location_id": "LOC-1",
+      "address": "5635 Matthew Loaf",
+      "city": "Port Bethhaven",
+      "province": "ON",
+      "year_built": 1973,
+      "construction": "Steel",
+      "occupancy": "Warehouse / office",
+      "building_tiv": 680040,
+      "contents_tiv": 417986,
+      "deductible": 12919
+    }
+  ],
+  "payroll": 3902311,
+  "revenue": 5048024,
+  "employees": 213,
+  "prior_carrier": "Durham, Gutierrez and Arellano",
+  "losses": []
+}

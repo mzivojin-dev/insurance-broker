@@ -1,0 +1,28 @@
+{
+  "submission_id": "SUB-2026-0008",
+  "named_insured": "Willis Inc",
+  "dba": "and Sons",
+  "fein": "30-8454442",
+  "effective_date": "2026-11-13",
+  "business_description": "Progressive zero administration Graphical User Interface",
+  "years_in_business": 31,
+  "locations": [
+    {
+      "location_id": "LOC-1",
+      "address": "45331 John View",
+      "city": "North Christopher",
+      "province": "ON",
+      "year_built": 2010,
+      "construction": "Frame",
+      "occupancy": "Warehouse / office",
+      "building_tiv": 3146074,
+      "contents_tiv": 676424,
+      "deductible": 21602
+    }
+  ],
+  "payroll": 1719479,
+  "revenue": 735197,
+  "employees": 231,
+  "prior_carrier": "Cohen-Reilly",
+  "losses": []
+}

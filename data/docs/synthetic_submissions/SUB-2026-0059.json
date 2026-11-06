@@ -1,0 +1,38 @@
+{
+  "submission_id": "SUB-2026-0059",
+  "named_insured": "Shaw, Landry and Davis",
+  "dba": "Group",
+  "fein": "87-6675412",
+  "effective_date": "2026-12-02",
+  "business_description": "Cross-platform impactful archive",
+  "years_in_business": 38,
+  "locations": [
+    {
+      "location_id": "LOC-1",
+      "address": "3127 Rangel Road Suite 359",
+      "city": "Nicholasstad",
+      "province": "ON",
+      "year_built": 1984,
+      "construction": "Steel",
+      "occupancy": "Warehouse / office",
+      "building_tiv": 4234268,
+      "contents_tiv": 763020,
+      "deductible": 5959
+    }
+  ],
+  "payroll": 1494658,
+  "revenue": 1790595,
+  "employees": 33,
+  "prior_carrier": "Newton Inc",
+  "losses": [
+    {
+      "policy_year": "2024",
+      "claim_date": "2024-03-10",
+      "claim_number": "CLM-58843",
+      "status": "Closed",
+      "paid": 102305,
+      "reserve": 54172,
+      "description": "Sequi inventore at voluptatibus quidem commodi distinctio minus impedit veniam."
+    }
+  ]
+}

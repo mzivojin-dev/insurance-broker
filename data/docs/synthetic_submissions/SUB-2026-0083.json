@@ -1,0 +1,38 @@
+{
+  "submission_id": "SUB-2026-0083",
+  "named_insured": "Brock and Sons",
+  "dba": "LLC",
+  "fein": "22-5234191",
+  "effective_date": "2027-01-01",
+  "business_description": "Operative interactive solution",
+  "years_in_business": 14,
+  "locations": [
+    {
+      "location_id": "LOC-1",
+      "address": "63920 Brian Mountain Apt. 917",
+      "city": "Ericaside",
+      "province": "ON",
+      "year_built": 1998,
+      "construction": "Frame",
+      "occupancy": "Warehouse / office",
+      "building_tiv": 4331270,
+      "contents_tiv": 59156,
+      "deductible": 22419
+    }
+  ],
+  "payroll": 2589901,
+  "revenue": 11970323,
+  "employees": 12,
+  "prior_carrier": "Tucker-Oliver",
+  "losses": [
+    {
+      "policy_year": "2022",
+      "claim_date": "2025-10-15",
+      "claim_number": "CLM-55427",
+      "status": "Closed",
+      "paid": 117605,
+      "reserve": 17036,
+      "description": "Quidem quidem tempora perspiciatis atque reiciendis error sint unde dicta."
+    }
+  ]
+}

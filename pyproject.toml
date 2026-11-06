@@ -1,0 +1,56 @@
+[project]
+name = "ai4all-broker-agents"
+version = "0.1.0"
+description = "Three AI agents for an insurance broker, built eval-first and deployed to AWS"
+requires-python = ">=3.12"
+dependencies = [
+    "agent-core",
+    "ams-mcp-server",
+    "guardrails",
+    "client-service",
+    "submission-intake",
+    "book-analyst",
+    "pyyaml>=6.0",
+    "jsonschema>=4.23",
+    "psycopg[binary]>=3.2",
+    "faker",
+    "jinja2",
+    "xhtml2pdf"
+]
+
+[dependency-groups]
+dev = ["pytest>=8.3", "ruff>=0.8", "mypy>=1.13", "types-pyyaml", "types-jsonschema"]
+
+[tool.uv]
+package = false
+
+[tool.uv.workspace]
+members = ["packages/*", "agents/*"]
+
+[tool.uv.sources]
+agent-core = { workspace = true }
+ams-mcp-server = { workspace = true }
+guardrails = { workspace = true }
+client-service = { workspace = true }
+submission-intake = { workspace = true }
+book-analyst = { workspace = true }
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "B", "UP"]
+
+[tool.ruff.lint.isort]
+known-first-party = [
+    "agent_core", "ams_mcp_server", "guardrails",
+    "client_service", "submission_intake", "book_analyst", "evals", "data",
+]
+
+[tool.mypy]
+python_version = "3.12"
+ignore_missing_imports = true
+
+[tool.pytest.ini_options]
+testpaths = ["agents", "packages", "evals/harness"]  # never evals/test_evals.py

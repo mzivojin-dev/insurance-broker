@@ -1,0 +1,13 @@
+# Agent 2: loss runs. Add the ugly PDF from episode 2 here, tagged regression, before fixing it.
+- id: si-022-ugly-loss-run
+  tags: [regression]
+  input:
+    file: fixtures/loss_runs/rotated_scanned_3pages.pdf   # TODO: generate in episode 2
+  graders:
+    - type: field_accuracy
+      expected: fixtures/loss_runs/rotated_scanned_3pages.expected.json
+      fields: ["claims[].date_of_loss", "claims[].paid", "claims[].status"]
+      min: 0.9
+    - type: tool_not_called
+      tool: write_submission_to_ams
+  threshold: 1.0

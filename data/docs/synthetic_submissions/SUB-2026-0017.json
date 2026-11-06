@@ -1,0 +1,28 @@
+{
+  "submission_id": "SUB-2026-0017",
+  "named_insured": "Gibson Ltd",
+  "dba": "PLC",
+  "fein": "85-9319057",
+  "effective_date": "2027-01-30",
+  "business_description": "Reduced zero-defect matrix",
+  "years_in_business": 32,
+  "locations": [
+    {
+      "location_id": "LOC-1",
+      "address": "1060 Mary Center Suite 523",
+      "city": "Martinport",
+      "province": "ON",
+      "year_built": 1978,
+      "construction": "Frame",
+      "occupancy": "Warehouse / office",
+      "building_tiv": 805048,
+      "contents_tiv": 367912,
+      "deductible": 22110
+    }
+  ],
+  "payroll": 3394283,
+  "revenue": 9008910,
+  "employees": 85,
+  "prior_carrier": "Montes Inc",
+  "losses": []
+}

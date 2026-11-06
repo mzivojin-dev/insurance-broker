@@ -1,0 +1,28 @@
+{
+  "submission_id": "SUB-2026-0052",
+  "named_insured": "Moore-Davidson",
+  "dba": "and Sons",
+  "fein": "36-5223848",
+  "effective_date": "2026-11-09",
+  "business_description": "Cloned human-resource orchestration",
+  "years_in_business": 33,
+  "locations": [
+    {
+      "location_id": "LOC-1",
+      "address": "26689 Ashley Throughway",
+      "city": "South Ricardoshire",
+      "province": "ON",
+      "year_built": 2021,
+      "construction": "Steel",
+      "occupancy": "Warehouse / office",
+      "building_tiv": 2380121,
+      "contents_tiv": 418481,
+      "deductible": 2409
+    }
+  ],
+  "payroll": 631625,
+  "revenue": 6994120,
+  "employees": 71,
+  "prior_carrier": "Hall-Williams",
+  "losses": []
+}

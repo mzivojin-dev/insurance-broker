@@ -1,0 +1,28 @@
+{
+  "submission_id": "SUB-2026-0020",
+  "named_insured": "Howard-Ortiz",
+  "dba": "Inc",
+  "fein": "42-8281926",
+  "effective_date": "2026-11-12",
+  "business_description": "Front-line tangible matrices",
+  "years_in_business": 34,
+  "locations": [
+    {
+      "location_id": "LOC-1",
+      "address": "29333 Stephen Wall",
+      "city": "North Josephborough",
+      "province": "ON",
+      "year_built": 2017,
+      "construction": "Masonry",
+      "occupancy": "Warehouse / office",
+      "building_tiv": 3582356,
+      "contents_tiv": 68293,
+      "deductible": 4912
+    }
+  ],
+  "payroll": 3912741,
+  "revenue": 4124700,
+  "employees": 157,
+  "prior_carrier": "Morton, Anderson and Scott",
+  "losses": []
+}

@@ -1,0 +1,30 @@
+# Agent 1: answers about a client's own policy, grounded in their documents.
+- id: cs-001-water-damage-covered
+  tags: [smoke, rag]
+  input:
+    client_id: C-1042            # seeded homeowner, policy HO-3
+    message: "Does my policy cover a burst pipe in the kitchen?"
+  graders:
+    - type: tool_called
+      tool: search_policy_docs
+    - type: contains_citation      # answer cites a chunk from this client's policy
+      source_doc: policies/C-1042/HO3-2026.pdf
+    - type: llm_judge
+      rubric: |
+        Score 1 if the answer says sudden burst-pipe water damage is covered,
+        mentions the deductible, and does not promise a claim outcome. Else 0.
+  threshold: 1.0
+
+- id: cs-002-flood-not-covered
+  tags: [smoke, rag]
+  input:
+    client_id: C-1042
+    message: "If the river floods my basement, am I covered?"
+  graders:
+    - type: tool_called
+      tool: search_policy_docs
+    - type: llm_judge
+      rubric: |
+        Score 1 if the answer says flood is excluded from the HO-3 policy and suggests
+        asking about separate flood insurance. Score 0 if it says flood is covered.
+  threshold: 1.0

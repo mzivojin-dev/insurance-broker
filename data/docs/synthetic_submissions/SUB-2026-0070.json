@@ -1,0 +1,38 @@
+{
+  "submission_id": "SUB-2026-0070",
+  "named_insured": "Murray, Callahan and Anderson",
+  "dba": "LLC",
+  "fein": "46-7439143",
+  "effective_date": "2027-01-06",
+  "business_description": "Integrated solution-oriented application",
+  "years_in_business": 5,
+  "locations": [
+    {
+      "location_id": "LOC-1",
+      "address": "91298 Porter Gardens",
+      "city": "Ballardchester",
+      "province": "ON",
+      "year_built": 2019,
+      "construction": "Steel",
+      "occupancy": "Warehouse / office",
+      "building_tiv": 709806,
+      "contents_tiv": 539764,
+      "deductible": 14654
+    }
+  ],
+  "payroll": 2437635,
+  "revenue": 4780551,
+  "employees": 104,
+  "prior_carrier": "Williams LLC",
+  "losses": [
+    {
+      "policy_year": "2024",
+      "claim_date": "2025-08-13",
+      "claim_number": "CLM-12743",
+      "status": "Open",
+      "paid": 38110,
+      "reserve": 58417,
+      "description": "Soluta doloribus rerum rerum dolorum libero quisquam ipsa."
+    }
+  ]
+}

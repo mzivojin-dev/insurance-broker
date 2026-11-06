@@ -1,0 +1,38 @@
+{
+  "submission_id": "SUB-2026-0064",
+  "named_insured": "Harris, Garrett and Taylor",
+  "dba": "Ltd",
+  "fein": "23-5011394",
+  "effective_date": "2026-11-12",
+  "business_description": "Focused transitional algorithm",
+  "years_in_business": 39,
+  "locations": [
+    {
+      "location_id": "LOC-1",
+      "address": "95407 Paula Village",
+      "city": "East Bobby",
+      "province": "ON",
+      "year_built": 1982,
+      "construction": "Masonry",
+      "occupancy": "Warehouse / office",
+      "building_tiv": 2366150,
+      "contents_tiv": 121102,
+      "deductible": 3783
+    }
+  ],
+  "payroll": 2420845,
+  "revenue": 5922155,
+  "employees": 78,
+  "prior_carrier": "Macias-Miller",
+  "losses": [
+    {
+      "policy_year": "2022",
+      "claim_date": "2025-11-07",
+      "claim_number": "CLM-55868",
+      "status": "Open",
+      "paid": 69475,
+      "reserve": 36366,
+      "description": "Animi pariatur incidunt laborum doloremque."
+    }
+  ]
+}

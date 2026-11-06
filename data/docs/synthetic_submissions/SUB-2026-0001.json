@@ -1,0 +1,38 @@
+{
+  "submission_id": "SUB-2026-0001",
+  "named_insured": "Vazquez Ltd",
+  "dba": "Group",
+  "fein": "77-5979094",
+  "effective_date": "2026-12-31",
+  "business_description": "Secured intermediate middleware",
+  "years_in_business": 27,
+  "locations": [
+    {
+      "location_id": "LOC-1",
+      "address": "45156 Waters Drive",
+      "city": "Kevinshire",
+      "province": "ON",
+      "year_built": 1982,
+      "construction": "Masonry",
+      "occupancy": "Warehouse / office",
+      "building_tiv": 3338388,
+      "contents_tiv": 174866,
+      "deductible": 21528
+    }
+  ],
+  "payroll": 2121220,
+  "revenue": 7576505,
+  "employees": 225,
+  "prior_carrier": "Thomas-Reeves",
+  "losses": [
+    {
+      "policy_year": "2023",
+      "claim_date": "2025-01-13",
+      "claim_number": "CLM-37875",
+      "status": "Closed",
+      "paid": 66144,
+      "reserve": 2100,
+      "description": "Dolor vitae cumque numquam non alias inventore quisquam consequatur porro."
+    }
+  ]
+}

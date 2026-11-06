@@ -1,0 +1,38 @@
+{
+  "submission_id": "SUB-2026-0044",
+  "named_insured": "Collins PLC",
+  "dba": "Ltd",
+  "fein": "38-8203430",
+  "effective_date": "2027-01-19",
+  "business_description": "Self-enabling 4thgeneration concept",
+  "years_in_business": 29,
+  "locations": [
+    {
+      "location_id": "LOC-1",
+      "address": "02219 Brittany Points Suite 422",
+      "city": "West Shawnland",
+      "province": "ON",
+      "year_built": 2001,
+      "construction": "Steel",
+      "occupancy": "Warehouse / office",
+      "building_tiv": 4127071,
+      "contents_tiv": 344988,
+      "deductible": 14071
+    }
+  ],
+  "payroll": 2753402,
+  "revenue": 9616738,
+  "employees": 248,
+  "prior_carrier": "Moran, Mosley and Hernandez",
+  "losses": [
+    {
+      "policy_year": "2022",
+      "claim_date": "2024-04-23",
+      "claim_number": "CLM-72940",
+      "status": "Closed",
+      "paid": 71355,
+      "reserve": 59182,
+      "description": "Deleniti consequuntur suscipit in eveniet."
+    }
+  ]
+}

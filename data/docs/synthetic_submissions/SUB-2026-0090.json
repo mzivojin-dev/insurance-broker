@@ -1,0 +1,28 @@
+{
+  "submission_id": "SUB-2026-0090",
+  "named_insured": "Simpson, Montes and Daugherty",
+  "dba": "Group",
+  "fein": "53-6202489",
+  "effective_date": "2026-11-13",
+  "business_description": "Balanced object-oriented array",
+  "years_in_business": 37,
+  "locations": [
+    {
+      "location_id": "LOC-1",
+      "address": "058 Jennifer Parkway Suite 311",
+      "city": "Lake Kimberly",
+      "province": "ON",
+      "year_built": 2007,
+      "construction": "Frame",
+      "occupancy": "Warehouse / office",
+      "building_tiv": 3084647,
+      "contents_tiv": 531926,
+      "deductible": 24403
+    }
+  ],
+  "payroll": 3641720,
+  "revenue": 10917440,
+  "employees": 138,
+  "prior_carrier": "Phillips-Parker",
+  "losses": []
+}

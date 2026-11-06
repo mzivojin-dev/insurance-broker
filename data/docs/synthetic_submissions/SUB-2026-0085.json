@@ -1,0 +1,38 @@
+{
+  "submission_id": "SUB-2026-0085",
+  "named_insured": "Warren-Shaffer",
+  "dba": "Inc",
+  "fein": "62-8157880",
+  "effective_date": "2027-01-22",
+  "business_description": "Ameliorated contextually-based attitude",
+  "years_in_business": 11,
+  "locations": [
+    {
+      "location_id": "LOC-1",
+      "address": "95069 John Unions Apt. 992",
+      "city": "Nicholsstad",
+      "province": "ON",
+      "year_built": 1994,
+      "construction": "Steel",
+      "occupancy": "Warehouse / office",
+      "building_tiv": 3043463,
+      "contents_tiv": 767480,
+      "deductible": 22700
+    }
+  ],
+  "payroll": 509490,
+  "revenue": 8268832,
+  "employees": 51,
+  "prior_carrier": "Wilson-Allen",
+  "losses": [
+    {
+      "policy_year": "2023",
+      "claim_date": "2025-07-17",
+      "claim_number": "CLM-72753",
+      "status": "Closed",
+      "paid": 34616,
+      "reserve": 7039,
+      "description": "Corporis unde natus magnam laboriosam."
+    }
+  ]
+}

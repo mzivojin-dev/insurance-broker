@@ -1,0 +1,28 @@
+{
+  "submission_id": "SUB-2026-0068",
+  "named_insured": "Thomas-Morgan",
+  "dba": "PLC",
+  "fein": "42-7284319",
+  "effective_date": "2026-11-07",
+  "business_description": "Organized maximized hardware",
+  "years_in_business": 24,
+  "locations": [
+    {
+      "location_id": "LOC-1",
+      "address": "388 Jesus Glen",
+      "city": "East Matthewview",
+      "province": "ON",
+      "year_built": 2003,
+      "construction": "Frame",
+      "occupancy": "Warehouse / office",
+      "building_tiv": 607295,
+      "contents_tiv": 783610,
+      "deductible": 19940
+    }
+  ],
+  "payroll": 788707,
+  "revenue": 685466,
+  "employees": 55,
+  "prior_carrier": "Fitzgerald Inc",
+  "losses": []
+}

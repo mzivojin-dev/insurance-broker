@@ -1,0 +1,28 @@
+{
+  "submission_id": "SUB-2026-0069",
+  "named_insured": "Williams Inc",
+  "dba": "Group",
+  "fein": "20-1750440",
+  "effective_date": "2026-11-30",
+  "business_description": "Persistent directional software",
+  "years_in_business": 9,
+  "locations": [
+    {
+      "location_id": "LOC-1",
+      "address": "570 Ford Ford",
+      "city": "Rileyhaven",
+      "province": "ON",
+      "year_built": 1981,
+      "construction": "Steel",
+      "occupancy": "Warehouse / office",
+      "building_tiv": 1990465,
+      "contents_tiv": 352584,
+      "deductible": 20284
+    }
+  ],
+  "payroll": 1824473,
+  "revenue": 6855733,
+  "employees": 22,
+  "prior_carrier": "Aguilar, Martin and Austin",
+  "losses": []
+}

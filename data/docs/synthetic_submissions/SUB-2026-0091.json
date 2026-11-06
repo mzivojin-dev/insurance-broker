@@ -1,0 +1,28 @@
+{
+  "submission_id": "SUB-2026-0091",
+  "named_insured": "Lee-Stephens",
+  "dba": "LLC",
+  "fein": "79-4282995",
+  "effective_date": "2026-11-29",
+  "business_description": "Function-based national hardware",
+  "years_in_business": 2,
+  "locations": [
+    {
+      "location_id": "LOC-1",
+      "address": "72723 Madison Springs",
+      "city": "Williamville",
+      "province": "ON",
+      "year_built": 2012,
+      "construction": "Steel",
+      "occupancy": "Warehouse / office",
+      "building_tiv": 1117476,
+      "contents_tiv": 865048,
+      "deductible": 24108
+    }
+  ],
+  "payroll": 1571398,
+  "revenue": 7175574,
+  "employees": 50,
+  "prior_carrier": "Summers, York and Wilson",
+  "losses": []
+}

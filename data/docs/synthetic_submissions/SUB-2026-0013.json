@@ -1,0 +1,38 @@
+{
+  "submission_id": "SUB-2026-0013",
+  "named_insured": "Bowman and Sons",
+  "dba": "and Sons",
+  "fein": "47-3458999",
+  "effective_date": "2027-01-22",
+  "business_description": "Synchronized real-time website",
+  "years_in_business": 16,
+  "locations": [
+    {
+      "location_id": "LOC-1",
+      "address": "254 Perkins Union Apt. 880",
+      "city": "Karaburgh",
+      "province": "ON",
+      "year_built": 1996,
+      "construction": "Steel",
+      "occupancy": "Warehouse / office",
+      "building_tiv": 1618510,
+      "contents_tiv": 543520,
+      "deductible": 4545
+    }
+  ],
+  "payroll": 3626668,
+  "revenue": 869504,
+  "employees": 172,
+  "prior_carrier": "Cox, Bell and Day",
+  "losses": [
+    {
+      "policy_year": "2025",
+      "claim_date": "2025-03-11",
+      "claim_number": "CLM-82580",
+      "status": "Open",
+      "paid": 37464,
+      "reserve": 7179,
+      "description": "Eum quia ipsum quo ducimus eaque recusandae autem repellendus."
+    }
+  ]
+}

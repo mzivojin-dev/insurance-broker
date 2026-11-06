@@ -1,0 +1,38 @@
+{
+  "submission_id": "SUB-2026-0007",
+  "named_insured": "Robinson, Oliver and Roy",
+  "dba": "Ltd",
+  "fein": "69-9446411",
+  "effective_date": "2027-01-20",
+  "business_description": "Open-source clear-thinking protocol",
+  "years_in_business": 15,
+  "locations": [
+    {
+      "location_id": "LOC-1",
+      "address": "693 Mary Fall Apt. 494",
+      "city": "Port Sarahville",
+      "province": "ON",
+      "year_built": 1985,
+      "construction": "Frame",
+      "occupancy": "Warehouse / office",
+      "building_tiv": 2734752,
+      "contents_tiv": 149521,
+      "deductible": 15930
+    }
+  ],
+  "payroll": 1011030,
+  "revenue": 10083509,
+  "employees": 18,
+  "prior_carrier": "Sampson PLC",
+  "losses": [
+    {
+      "policy_year": "2022",
+      "claim_date": "2024-04-19",
+      "claim_number": "CLM-55592",
+      "status": "Closed",
+      "paid": 64302,
+      "reserve": 17317,
+      "description": "Suscipit voluptas omnis nihil laudantium similique."
+    }
+  ]
+}

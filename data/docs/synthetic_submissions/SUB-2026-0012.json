@@ -1,0 +1,38 @@
+{
+  "submission_id": "SUB-2026-0012",
+  "named_insured": "Anderson-Walker",
+  "dba": "PLC",
+  "fein": "30-8105657",
+  "effective_date": "2026-12-28",
+  "business_description": "Ergonomic mission-critical implementation",
+  "years_in_business": 5,
+  "locations": [
+    {
+      "location_id": "LOC-1",
+      "address": "10987 Green Islands Apt. 079",
+      "city": "West Maurice",
+      "province": "ON",
+      "year_built": 1988,
+      "construction": "Frame",
+      "occupancy": "Warehouse / office",
+      "building_tiv": 1863779,
+      "contents_tiv": 690807,
+      "deductible": 24379
+    }
+  ],
+  "payroll": 3377327,
+  "revenue": 4087881,
+  "employees": 163,
+  "prior_carrier": "Williams, Walton and Hayes",
+  "losses": [
+    {
+      "policy_year": "2024",
+      "claim_date": "2025-07-15",
+      "claim_number": "CLM-30723",
+      "status": "Open",
+      "paid": 86330,
+      "reserve": 59579,
+      "description": "Voluptatem eius laborum similique ad suscipit optio error eius."
+    }
+  ]
+}

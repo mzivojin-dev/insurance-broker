@@ -1,0 +1,38 @@
+{
+  "submission_id": "SUB-2026-0078",
+  "named_insured": "Daniels LLC",
+  "dba": "and Sons",
+  "fein": "40-5238069",
+  "effective_date": "2026-11-08",
+  "business_description": "Innovative bifurcated policy",
+  "years_in_business": 10,
+  "locations": [
+    {
+      "location_id": "LOC-1",
+      "address": "0205 King Turnpike",
+      "city": "Geraldborough",
+      "province": "ON",
+      "year_built": 1991,
+      "construction": "Steel",
+      "occupancy": "Warehouse / office",
+      "building_tiv": 1629065,
+      "contents_tiv": 738205,
+      "deductible": 11813
+    }
+  ],
+  "payroll": 3841329,
+  "revenue": 669909,
+  "employees": 170,
+  "prior_carrier": "Miller, Hall and Lyons",
+  "losses": [
+    {
+      "policy_year": "2025",
+      "claim_date": "2025-01-14",
+      "claim_number": "CLM-57510",
+      "status": "Open",
+      "paid": 61865,
+      "reserve": 36604,
+      "description": "Excepturi fugit earum suscipit corporis hic odio temporibus deleniti dolore."
+    }
+  ]
+}

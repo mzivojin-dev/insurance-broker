@@ -1,0 +1,38 @@
+{
+  "submission_id": "SUB-2026-0038",
+  "named_insured": "Miller, Parrish and Johnson",
+  "dba": "and Sons",
+  "fein": "29-5724222",
+  "effective_date": "2027-01-16",
+  "business_description": "Visionary cohesive attitude",
+  "years_in_business": 23,
+  "locations": [
+    {
+      "location_id": "LOC-1",
+      "address": "05121 Gilbert Spur",
+      "city": "North William",
+      "province": "ON",
+      "year_built": 2024,
+      "construction": "Masonry",
+      "occupancy": "Warehouse / office",
+      "building_tiv": 664413,
+      "contents_tiv": 600787,
+      "deductible": 13181
+    }
+  ],
+  "payroll": 2342751,
+  "revenue": 10573193,
+  "employees": 63,
+  "prior_carrier": "White-George",
+  "losses": [
+    {
+      "policy_year": "2024",
+      "claim_date": "2026-05-10",
+      "claim_number": "CLM-91237",
+      "status": "Closed",
+      "paid": 84252,
+      "reserve": 20822,
+      "description": "Delectus placeat autem sunt doloremque doloribus nisi ea soluta."
+    }
+  ]
+}

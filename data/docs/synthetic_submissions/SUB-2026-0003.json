@@ -1,0 +1,38 @@
+{
+  "submission_id": "SUB-2026-0003",
+  "named_insured": "Garcia Inc",
+  "dba": "Group",
+  "fein": "73-6002278",
+  "effective_date": "2026-11-13",
+  "business_description": "Down-sized well-modulated framework",
+  "years_in_business": 19,
+  "locations": [
+    {
+      "location_id": "LOC-1",
+      "address": "9491 Stark Common Suite 467",
+      "city": "East Stephaniefort",
+      "province": "ON",
+      "year_built": 2010,
+      "construction": "Frame",
+      "occupancy": "Warehouse / office",
+      "building_tiv": 583728,
+      "contents_tiv": 537121,
+      "deductible": 23514
+    }
+  ],
+  "payroll": 2604165,
+  "revenue": 9230525,
+  "employees": 197,
+  "prior_carrier": "Adkins and Sons",
+  "losses": [
+    {
+      "policy_year": "2025",
+      "claim_date": "2025-11-07",
+      "claim_number": "CLM-18725",
+      "status": "Closed",
+      "paid": 14714,
+      "reserve": 34179,
+      "description": "Molestias hic quibusdam doloribus libero mollitia recusandae."
+    }
+  ]
+}

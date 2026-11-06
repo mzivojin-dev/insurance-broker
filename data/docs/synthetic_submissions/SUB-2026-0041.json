@@ -1,0 +1,38 @@
+{
+  "submission_id": "SUB-2026-0041",
+  "named_insured": "Nguyen and Sons",
+  "dba": "and Sons",
+  "fein": "67-3736739",
+  "effective_date": "2027-01-30",
+  "business_description": "Switchable incremental migration",
+  "years_in_business": 17,
+  "locations": [
+    {
+      "location_id": "LOC-1",
+      "address": "58342 Tara Mount",
+      "city": "Rebekahborough",
+      "province": "ON",
+      "year_built": 2022,
+      "construction": "Frame",
+      "occupancy": "Warehouse / office",
+      "building_tiv": 2427414,
+      "contents_tiv": 393033,
+      "deductible": 15607
+    }
+  ],
+  "payroll": 2737081,
+  "revenue": 588378,
+  "employees": 155,
+  "prior_carrier": "Burns-Jackson",
+  "losses": [
+    {
+      "policy_year": "2023",
+      "claim_date": "2024-02-11",
+      "claim_number": "CLM-43518",
+      "status": "Open",
+      "paid": 97413,
+      "reserve": 69025,
+      "description": "Laboriosam fugit saepe amet natus."
+    }
+  ]
+}

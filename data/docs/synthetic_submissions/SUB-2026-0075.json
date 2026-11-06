@@ -1,0 +1,38 @@
+{
+  "submission_id": "SUB-2026-0075",
+  "named_insured": "Thompson-Black",
+  "dba": "Ltd",
+  "fein": "32-3833379",
+  "effective_date": "2026-11-29",
+  "business_description": "Stand-alone asynchronous forecast",
+  "years_in_business": 17,
+  "locations": [
+    {
+      "location_id": "LOC-1",
+      "address": "64183 Joanna Village Suite 160",
+      "city": "North Briantown",
+      "province": "ON",
+      "year_built": 1990,
+      "construction": "Frame",
+      "occupancy": "Warehouse / office",
+      "building_tiv": 1112135,
+      "contents_tiv": 440101,
+      "deductible": 14662
+    }
+  ],
+  "payroll": 2498097,
+  "revenue": 6756872,
+  "employees": 60,
+  "prior_carrier": "Roach and Sons",
+  "losses": [
+    {
+      "policy_year": "2025",
+      "claim_date": "2025-04-08",
+      "claim_number": "CLM-43166",
+      "status": "Closed",
+      "paid": 30366,
+      "reserve": 11047,
+      "description": "Delectus velit aperiam et eaque."
+    }
+  ]
+}

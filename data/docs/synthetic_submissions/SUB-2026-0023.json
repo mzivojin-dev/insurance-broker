@@ -1,0 +1,38 @@
+{
+  "submission_id": "SUB-2026-0023",
+  "named_insured": "Perry, Coleman and Ross",
+  "dba": "Ltd",
+  "fein": "23-3465430",
+  "effective_date": "2026-11-16",
+  "business_description": "Open-architected secondary Local Area Network",
+  "years_in_business": 31,
+  "locations": [
+    {
+      "location_id": "LOC-1",
+      "address": "6831 Jeffrey Oval",
+      "city": "Tinaport",
+      "province": "ON",
+      "year_built": 2000,
+      "construction": "Frame",
+      "occupancy": "Warehouse / office",
+      "building_tiv": 3281457,
+      "contents_tiv": 970081,
+      "deductible": 13437
+    }
+  ],
+  "payroll": 1816429,
+  "revenue": 2495566,
+  "employees": 132,
+  "prior_carrier": "Vincent-Hicks",
+  "losses": [
+    {
+      "policy_year": "2025",
+      "claim_date": "2026-07-01",
+      "claim_number": "CLM-31885",
+      "status": "Open",
+      "paid": 89982,
+      "reserve": 16006,
+      "description": "Nobis consequatur ullam deserunt dolore doloremque nobis similique omnis."
+    }
+  ]
+}

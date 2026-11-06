@@ -1,0 +1,28 @@
+{
+  "submission_id": "SUB-2026-0061",
+  "named_insured": "Valentine-Franco",
+  "dba": "LLC",
+  "fein": "48-1488700",
+  "effective_date": "2027-01-23",
+  "business_description": "Phased modular time-frame",
+  "years_in_business": 24,
+  "locations": [
+    {
+      "location_id": "LOC-1",
+      "address": "7187 Miguel Crossing",
+      "city": "Rodriguezchester",
+      "province": "ON",
+      "year_built": 1985,
+      "construction": "Frame",
+      "occupancy": "Warehouse / office",
+      "building_tiv": 1128271,
+      "contents_tiv": 613777,
+      "deductible": 4425
+    }
+  ],
+  "payroll": 1929571,
+  "revenue": 7456437,
+  "employees": 90,
+  "prior_carrier": "Robinson-Lewis",
+  "losses": []
+}

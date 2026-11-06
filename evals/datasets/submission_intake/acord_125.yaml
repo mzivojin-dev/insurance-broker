@@ -1,0 +1,17 @@
+# Agent 2: ACORD 125 extraction. Each fixture PDF has a hand-checked .expected.json next to it.
+- id: si-007-acord125-clean
+  tags: [smoke, extraction]
+  input:
+    file: fixtures/acord125/bakery_clean.pdf
+  graders:
+    - type: json_schema
+      schema: schemas/submission.json
+    - type: field_accuracy         # per-field normalised match
+      expected: fixtures/acord125/bakery_clean.expected.json
+      fields: [named_insured, fein, effective_date, lines_of_business]
+      min: 0.95
+    - type: tool_called
+      tool: queue_for_review
+    - type: tool_not_called
+      tool: write_submission_to_ams   # must queue for CSR review, never write directly
+  threshold: 1.0

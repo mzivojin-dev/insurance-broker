@@ -1,0 +1,38 @@
+{
+  "submission_id": "SUB-2026-0054",
+  "named_insured": "Mendoza Ltd",
+  "dba": "Inc",
+  "fein": "31-9193586",
+  "effective_date": "2026-11-14",
+  "business_description": "Function-based national strategy",
+  "years_in_business": 25,
+  "locations": [
+    {
+      "location_id": "LOC-1",
+      "address": "1052 Klein Coves",
+      "city": "Port Christopher",
+      "province": "ON",
+      "year_built": 1999,
+      "construction": "Masonry",
+      "occupancy": "Warehouse / office",
+      "building_tiv": 527384,
+      "contents_tiv": 98873,
+      "deductible": 2555
+    }
+  ],
+  "payroll": 1972904,
+  "revenue": 3472453,
+  "employees": 68,
+  "prior_carrier": "Tyler-Miller",
+  "losses": [
+    {
+      "policy_year": "2024",
+      "claim_date": "2024-05-06",
+      "claim_number": "CLM-65186",
+      "status": "Open",
+      "paid": 106656,
+      "reserve": 27104,
+      "description": "Dicta cupiditate id laudantium nulla culpa natus."
+    }
+  ]
+}

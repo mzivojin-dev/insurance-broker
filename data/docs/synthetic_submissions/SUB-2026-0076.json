@@ -1,0 +1,28 @@
+{
+  "submission_id": "SUB-2026-0076",
+  "named_insured": "Evans Group",
+  "dba": "LLC",
+  "fein": "12-6440456",
+  "effective_date": "2027-02-02",
+  "business_description": "Down-sized zero-defect workforce",
+  "years_in_business": 10,
+  "locations": [
+    {
+      "location_id": "LOC-1",
+      "address": "3075 Brett Center",
+      "city": "Gregorymouth",
+      "province": "ON",
+      "year_built": 1973,
+      "construction": "Masonry",
+      "occupancy": "Warehouse / office",
+      "building_tiv": 3089648,
+      "contents_tiv": 906262,
+      "deductible": 19066
+    }
+  ],
+  "payroll": 3434476,
+  "revenue": 10765080,
+  "employees": 200,
+  "prior_carrier": "Kelly-Wheeler",
+  "losses": []
+}

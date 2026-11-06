@@ -1,0 +1,38 @@
+{
+  "submission_id": "SUB-2026-0079",
+  "named_insured": "Ward Ltd",
+  "dba": "Ltd",
+  "fein": "29-9999016",
+  "effective_date": "2026-12-12",
+  "business_description": "Versatile discrete solution",
+  "years_in_business": 37,
+  "locations": [
+    {
+      "location_id": "LOC-1",
+      "address": "3415 Tyler Junctions Suite 529",
+      "city": "Humphreyview",
+      "province": "ON",
+      "year_built": 1976,
+      "construction": "Masonry",
+      "occupancy": "Warehouse / office",
+      "building_tiv": 3839487,
+      "contents_tiv": 279231,
+      "deductible": 9765
+    }
+  ],
+  "payroll": 2833670,
+  "revenue": 11250123,
+  "employees": 167,
+  "prior_carrier": "Villegas-Hutchinson",
+  "losses": [
+    {
+      "policy_year": "2025",
+      "claim_date": "2024-12-12",
+      "claim_number": "CLM-55384",
+      "status": "Closed",
+      "paid": 70976,
+      "reserve": 28600,
+      "description": "Deleniti placeat dignissimos vitae officia neque."
+    }
+  ]
+}

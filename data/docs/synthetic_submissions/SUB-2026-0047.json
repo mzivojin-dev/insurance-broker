@@ -1,0 +1,38 @@
+{
+  "submission_id": "SUB-2026-0047",
+  "named_insured": "Anderson, Hubbard and Henderson",
+  "dba": "Ltd",
+  "fein": "71-8487765",
+  "effective_date": "2026-11-21",
+  "business_description": "Vision-oriented incremental interface",
+  "years_in_business": 3,
+  "locations": [
+    {
+      "location_id": "LOC-1",
+      "address": "6299 Carroll Orchard Apt. 343",
+      "city": "Lake Biancaton",
+      "province": "ON",
+      "year_built": 2011,
+      "construction": "Masonry",
+      "occupancy": "Warehouse / office",
+      "building_tiv": 1809496,
+      "contents_tiv": 636569,
+      "deductible": 12700
+    }
+  ],
+  "payroll": 2423153,
+  "revenue": 2662434,
+  "employees": 44,
+  "prior_carrier": "Brady-Ross",
+  "losses": [
+    {
+      "policy_year": "2024",
+      "claim_date": "2024-10-02",
+      "claim_number": "CLM-56255",
+      "status": "Closed",
+      "paid": 72342,
+      "reserve": 46747,
+      "description": "Reprehenderit repudiandae voluptate ducimus omnis modi harum beatae assumenda doloribus."
+    }
+  ]
+}

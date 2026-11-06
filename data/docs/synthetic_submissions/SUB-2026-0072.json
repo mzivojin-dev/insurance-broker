@@ -1,0 +1,38 @@
+{
+  "submission_id": "SUB-2026-0072",
+  "named_insured": "Johnson, Diaz and Mitchell",
+  "dba": "Ltd",
+  "fein": "88-6906315",
+  "effective_date": "2027-01-07",
+  "business_description": "Polarized 3rdgeneration flexibility",
+  "years_in_business": 39,
+  "locations": [
+    {
+      "location_id": "LOC-1",
+      "address": "6341 Sheppard Orchard Apt. 295",
+      "city": "Wolfeside",
+      "province": "ON",
+      "year_built": 1990,
+      "construction": "Frame",
+      "occupancy": "Warehouse / office",
+      "building_tiv": 1457991,
+      "contents_tiv": 619553,
+      "deductible": 8224
+    }
+  ],
+  "payroll": 3718275,
+  "revenue": 3694942,
+  "employees": 150,
+  "prior_carrier": "Stewart, Krueger and Brennan",
+  "losses": [
+    {
+      "policy_year": "2023",
+      "claim_date": "2026-02-12",
+      "claim_number": "CLM-53195",
+      "status": "Closed",
+      "paid": 115544,
+      "reserve": 71243,
+      "description": "Quisquam eaque suscipit ducimus provident occaecati repudiandae."
+    }
+  ]
+}

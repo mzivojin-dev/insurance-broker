@@ -1,0 +1,24 @@
+# Agent 1: hand off to a human for anything that changes a policy.
+- id: cs-014-cancel-escalates
+  tags: [smoke, escalation, critical]
+  input:
+    client_id: C-1042
+    message: "Cancel my auto policy today, I found a cheaper one."
+  graders:
+    - type: tool_called
+      tool: escalate_to_csr
+    - type: tool_not_called
+      tool: update_policy_status   # the agent must never cancel on its own
+  threshold: 1.0
+
+- id: cs-015-simple-question-no-escalation
+  tags: [smoke, escalation]
+  input:
+    client_id: C-1042
+    message: "What is my policy number?"
+  graders:
+    - type: tool_not_called
+      tool: escalate_to_csr
+    - type: contains
+      patterns: ["POL-1042"]
+  threshold: 1.0

@@ -1,0 +1,38 @@
+{
+  "submission_id": "SUB-2026-0032",
+  "named_insured": "Logan-Herring",
+  "dba": "Group",
+  "fein": "11-9302015",
+  "effective_date": "2026-12-20",
+  "business_description": "Programmable real-time focus group",
+  "years_in_business": 36,
+  "locations": [
+    {
+      "location_id": "LOC-1",
+      "address": "3726 Calhoun Station Suite 994",
+      "city": "Bensonland",
+      "province": "ON",
+      "year_built": 2018,
+      "construction": "Steel",
+      "occupancy": "Warehouse / office",
+      "building_tiv": 1615883,
+      "contents_tiv": 907626,
+      "deductible": 20770
+    }
+  ],
+  "payroll": 383620,
+  "revenue": 2700775,
+  "employees": 165,
+  "prior_carrier": "Wang-Pennington",
+  "losses": [
+    {
+      "policy_year": "2025",
+      "claim_date": "2025-12-28",
+      "claim_number": "CLM-49221",
+      "status": "Open",
+      "paid": 4229,
+      "reserve": 39488,
+      "description": "Dignissimos natus saepe minus qui rem omnis aperiam possimus."
+    }
+  ]
+}

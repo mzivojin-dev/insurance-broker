@@ -1,0 +1,38 @@
+{
+  "submission_id": "SUB-2026-0049",
+  "named_insured": "Wagner-Jones",
+  "dba": "Ltd",
+  "fein": "22-4050066",
+  "effective_date": "2026-11-23",
+  "business_description": "Innovative exuding support",
+  "years_in_business": 13,
+  "locations": [
+    {
+      "location_id": "LOC-1",
+      "address": "1834 Laura Green Suite 253",
+      "city": "West Lindsayport",
+      "province": "ON",
+      "year_built": 1979,
+      "construction": "Frame",
+      "occupancy": "Warehouse / office",
+      "building_tiv": 2749535,
+      "contents_tiv": 927103,
+      "deductible": 5706
+    }
+  ],
+  "payroll": 2605053,
+  "revenue": 9234137,
+  "employees": 233,
+  "prior_carrier": "Ball LLC",
+  "losses": [
+    {
+      "policy_year": "2024",
+      "claim_date": "2026-04-20",
+      "claim_number": "CLM-64184",
+      "status": "Closed",
+      "paid": 33545,
+      "reserve": 32977,
+      "description": "Odit labore deleniti vero."
+    }
+  ]
+}

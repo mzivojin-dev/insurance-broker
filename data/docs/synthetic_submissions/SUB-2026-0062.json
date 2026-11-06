@@ -1,0 +1,38 @@
+{
+  "submission_id": "SUB-2026-0062",
+  "named_insured": "Boyle Ltd",
+  "dba": "Ltd",
+  "fein": "45-8232265",
+  "effective_date": "2026-12-16",
+  "business_description": "Progressive dynamic benchmark",
+  "years_in_business": 33,
+  "locations": [
+    {
+      "location_id": "LOC-1",
+      "address": "15491 Williams Plaza Apt. 620",
+      "city": "Michellefort",
+      "province": "ON",
+      "year_built": 2018,
+      "construction": "Frame",
+      "occupancy": "Warehouse / office",
+      "building_tiv": 2191024,
+      "contents_tiv": 265678,
+      "deductible": 9163
+    }
+  ],
+  "payroll": 3579303,
+  "revenue": 1824880,
+  "employees": 84,
+  "prior_carrier": "West Group",
+  "losses": [
+    {
+      "policy_year": "2022",
+      "claim_date": "2025-07-20",
+      "claim_number": "CLM-95074",
+      "status": "Closed",
+      "paid": 131256,
+      "reserve": 65000,
+      "description": "Facilis modi quod voluptates repellat tempora cupiditate voluptate ut vel."
+    }
+  ]
+}

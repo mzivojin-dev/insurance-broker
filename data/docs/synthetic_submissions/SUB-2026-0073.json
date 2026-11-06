@@ -1,0 +1,38 @@
+{
+  "submission_id": "SUB-2026-0073",
+  "named_insured": "Thompson-Lopez",
+  "dba": "and Sons",
+  "fein": "22-6721732",
+  "effective_date": "2026-12-15",
+  "business_description": "Compatible contextually-based collaboration",
+  "years_in_business": 23,
+  "locations": [
+    {
+      "location_id": "LOC-1",
+      "address": "1165 Smith Courts",
+      "city": "Jacobbury",
+      "province": "ON",
+      "year_built": 1998,
+      "construction": "Steel",
+      "occupancy": "Warehouse / office",
+      "building_tiv": 1047635,
+      "contents_tiv": 229659,
+      "deductible": 1919
+    }
+  ],
+  "payroll": 3533444,
+  "revenue": 9861665,
+  "employees": 76,
+  "prior_carrier": "Perez Inc",
+  "losses": [
+    {
+      "policy_year": "2022",
+      "claim_date": "2025-01-13",
+      "claim_number": "CLM-36479",
+      "status": "Open",
+      "paid": 6683,
+      "reserve": 19374,
+      "description": "Ipsum vero ex voluptatem facere vero provident amet impedit molestiae."
+    }
+  ]
+}

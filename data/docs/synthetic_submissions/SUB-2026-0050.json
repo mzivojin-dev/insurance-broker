@@ -1,0 +1,38 @@
+{
+  "submission_id": "SUB-2026-0050",
+  "named_insured": "Walker, Bell and Gray",
+  "dba": "Group",
+  "fein": "67-1055354",
+  "effective_date": "2026-12-21",
+  "business_description": "Future-proofed methodical attitude",
+  "years_in_business": 20,
+  "locations": [
+    {
+      "location_id": "LOC-1",
+      "address": "3480 Donna Island Suite 077",
+      "city": "Priscillabury",
+      "province": "ON",
+      "year_built": 2015,
+      "construction": "Masonry",
+      "occupancy": "Warehouse / office",
+      "building_tiv": 4746667,
+      "contents_tiv": 695912,
+      "deductible": 10559
+    }
+  ],
+  "payroll": 698990,
+  "revenue": 4812291,
+  "employees": 247,
+  "prior_carrier": "Collins, Davenport and Obrien",
+  "losses": [
+    {
+      "policy_year": "2024",
+      "claim_date": "2026-03-30",
+      "claim_number": "CLM-20963",
+      "status": "Open",
+      "paid": 104316,
+      "reserve": 18772,
+      "description": "Atque repellat natus culpa commodi quisquam voluptatum voluptatem ut."
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "submission_id": "SUB-2026-0021",
+  "named_insured": "Chen and Sons",
+  "dba": "Ltd",
+  "fein": "61-5959033",
+  "effective_date": "2026-11-22",
+  "business_description": "Managed explicit emulation",
+  "years_in_business": 34,
+  "locations": [
+    {
+      "location_id": "LOC-1",
+      "address": "87767 Lane Plains",
+      "city": "Staceystad",
+      "province": "ON",
+      "year_built": 2003,
+      "construction": "Steel",
+      "occupancy": "Warehouse / office",
+      "building_tiv": 1475962,
+      "contents_tiv": 71032,
+      "deductible": 14000
+    }
+  ],
+  "payroll": 3337464,
+  "revenue": 1976143,
+  "employees": 75,
+  "prior_carrier": "Russell, Townsend and Price",
+  "losses": []
+}

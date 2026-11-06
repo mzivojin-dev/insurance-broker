@@ -1,0 +1,38 @@
+{
+  "submission_id": "SUB-2026-0100",
+  "named_insured": "Miller, Page and Gibbs",
+  "dba": "Inc",
+  "fein": "55-9368872",
+  "effective_date": "2027-01-16",
+  "business_description": "Universal homogeneous support",
+  "years_in_business": 6,
+  "locations": [
+    {
+      "location_id": "LOC-1",
+      "address": "54608 Kenneth Loop Apt. 286",
+      "city": "Smithstad",
+      "province": "ON",
+      "year_built": 2014,
+      "construction": "Steel",
+      "occupancy": "Warehouse / office",
+      "building_tiv": 2948730,
+      "contents_tiv": 756242,
+      "deductible": 13023
+    }
+  ],
+  "payroll": 2811331,
+  "revenue": 4312449,
+  "employees": 190,
+  "prior_carrier": "Olson LLC",
+  "losses": [
+    {
+      "policy_year": "2023",
+      "claim_date": "2025-09-03",
+      "claim_number": "CLM-70882",
+      "status": "Open",
+      "paid": 72262,
+      "reserve": 26439,
+      "description": "Neque esse ipsum nostrum molestiae nesciunt rem."
+    }
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "submission_id": "SUB-2026-0040",
+  "named_insured": "Carroll, Wilson and Williams",
+  "dba": "PLC",
+  "fein": "92-5048472",
+  "effective_date": "2026-11-12",
+  "business_description": "Versatile encompassing workforce",
+  "years_in_business": 32,
+  "locations": [
+    {
+      "location_id": "LOC-1",
+      "address": "08005 Michael Haven",
+      "city": "Lake Jenniferton",
+      "province": "ON",
+      "year_built": 2013,
+      "construction": "Steel",
+      "occupancy": "Warehouse / office",
+      "building_tiv": 597089,
+      "contents_tiv": 136469,
+      "deductible": 21039
+    }
+  ],
+  "payroll": 767810,
+  "revenue": 3205094,
+  "employees": 231,
+  "prior_carrier": "Curry, Peters and Fuller",
+  "losses": [
+    {
+      "policy_year": "2024",
+      "claim_date": "2025-08-30",
+      "claim_number": "CLM-68475",
+      "status": "Closed",
+      "paid": 717,
+      "reserve": 25743,
+      "description": "Atque mollitia tenetur modi totam."
+    }
+  ]
+}

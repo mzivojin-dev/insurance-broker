@@ -1,0 +1,38 @@
+{
+  "submission_id": "SUB-2026-0094",
+  "named_insured": "Jackson LLC",
+  "dba": "PLC",
+  "fein": "62-6705411",
+  "effective_date": "2026-12-23",
+  "business_description": "Managed value-added adapter",
+  "years_in_business": 39,
+  "locations": [
+    {
+      "location_id": "LOC-1",
+      "address": "206 Patrick Shoal",
+      "city": "West Christopher",
+      "province": "ON",
+      "year_built": 1986,
+      "construction": "Masonry",
+      "occupancy": "Warehouse / office",
+      "building_tiv": 1614185,
+      "contents_tiv": 976785,
+      "deductible": 4123
+    }
+  ],
+  "payroll": 250972,
+  "revenue": 7808750,
+  "employees": 184,
+  "prior_carrier": "Johnson Inc",
+  "losses": [
+    {
+      "policy_year": "2024",
+      "claim_date": "2024-09-14",
+      "claim_number": "CLM-29206",
+      "status": "Closed",
+      "paid": 100571,
+      "reserve": 5463,
+      "description": "Nam consectetur facere quaerat doloribus ex non odit dignissimos."
+    }
+  ]
+}

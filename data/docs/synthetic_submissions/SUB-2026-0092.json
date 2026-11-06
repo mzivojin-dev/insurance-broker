@@ -1,0 +1,38 @@
+{
+  "submission_id": "SUB-2026-0092",
+  "named_insured": "Lane Group",
+  "dba": "Ltd",
+  "fein": "54-8094136",
+  "effective_date": "2027-01-16",
+  "business_description": "Focused fresh-thinking pricing structure",
+  "years_in_business": 4,
+  "locations": [
+    {
+      "location_id": "LOC-1",
+      "address": "1235 Gonzales Bridge",
+      "city": "East Christine",
+      "province": "ON",
+      "year_built": 2022,
+      "construction": "Frame",
+      "occupancy": "Warehouse / office",
+      "building_tiv": 4451571,
+      "contents_tiv": 192987,
+      "deductible": 9671
+    }
+  ],
+  "payroll": 1378252,
+  "revenue": 2012644,
+  "employees": 163,
+  "prior_carrier": "Manning, Gray and Reed",
+  "losses": [
+    {
+      "policy_year": "2024",
+      "claim_date": "2024-10-05",
+      "claim_number": "CLM-94925",
+      "status": "Open",
+      "paid": 118737,
+      "reserve": 11085,
+      "description": "Quisquam maxime consectetur earum debitis culpa tempora quidem consequuntur dolorum."
+    }
+  ]
+}

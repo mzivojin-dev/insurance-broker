@@ -1,0 +1,38 @@
+{
+  "submission_id": "SUB-2026-0057",
+  "named_insured": "Hancock, Johnson and Jones",
+  "dba": "LLC",
+  "fein": "34-3621931",
+  "effective_date": "2026-12-20",
+  "business_description": "Multi-lateral tangible Graphic Interface",
+  "years_in_business": 36,
+  "locations": [
+    {
+      "location_id": "LOC-1",
+      "address": "4849 Miranda Shore Suite 029",
+      "city": "Nancyton",
+      "province": "ON",
+      "year_built": 1989,
+      "construction": "Masonry",
+      "occupancy": "Warehouse / office",
+      "building_tiv": 2625995,
+      "contents_tiv": 420257,
+      "deductible": 1335
+    }
+  ],
+  "payroll": 3900570,
+  "revenue": 1760267,
+  "employees": 169,
+  "prior_carrier": "Green, Cooper and Castro",
+  "losses": [
+    {
+      "policy_year": "2024",
+      "claim_date": "2026-02-19",
+      "claim_number": "CLM-42368",
+      "status": "Closed",
+      "paid": 68750,
+      "reserve": 20129,
+      "description": "Dignissimos minima accusantium sint sint."
+    }
+  ]
+}

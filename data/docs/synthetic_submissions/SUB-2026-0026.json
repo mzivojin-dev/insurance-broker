@@ -1,0 +1,38 @@
+{
+  "submission_id": "SUB-2026-0026",
+  "named_insured": "Vincent, Obrien and Price",
+  "dba": "Ltd",
+  "fein": "26-1978125",
+  "effective_date": "2027-01-15",
+  "business_description": "Down-sized zero tolerance firmware",
+  "years_in_business": 31,
+  "locations": [
+    {
+      "location_id": "LOC-1",
+      "address": "72643 Garcia Fort Suite 683",
+      "city": "Colemouth",
+      "province": "ON",
+      "year_built": 1997,
+      "construction": "Masonry",
+      "occupancy": "Warehouse / office",
+      "building_tiv": 2965711,
+      "contents_tiv": 906130,
+      "deductible": 18447
+    }
+  ],
+  "payroll": 1173084,
+  "revenue": 712009,
+  "employees": 107,
+  "prior_carrier": "Mason-Patrick",
+  "losses": [
+    {
+      "policy_year": "2024",
+      "claim_date": "2025-10-19",
+      "claim_number": "CLM-22910",
+      "status": "Open",
+      "paid": 104482,
+      "reserve": 43400,
+      "description": "Mollitia eius nulla nam molestiae necessitatibus."
+    }
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "submission_id": "SUB-2026-0033",
+  "named_insured": "Martinez-Cameron",
+  "dba": "Group",
+  "fein": "91-3330310",
+  "effective_date": "2026-12-02",
+  "business_description": "Sharable grid-enabled initiative",
+  "years_in_business": 34,
+  "locations": [
+    {
+      "location_id": "LOC-1",
+      "address": "7242 Long Curve",
+      "city": "North Scott",
+      "province": "ON",
+      "year_built": 1976,
+      "construction": "Frame",
+      "occupancy": "Warehouse / office",
+      "building_tiv": 1551977,
+      "contents_tiv": 136670,
+      "deductible": 9835
+    }
+  ],
+  "payroll": 432951,
+  "revenue": 6678981,
+  "employees": 75,
+  "prior_carrier": "Ford, Carrillo and Juarez",
+  "losses": [
+    {
+      "policy_year": "2024",
+      "claim_date": "2025-12-10",
+      "claim_number": "CLM-51123",
+      "status": "Open",
+      "paid": 60901,
+      "reserve": 49513,
+      "description": "Error dolorem accusamus esse commodi dolores eius harum itaque cupiditate."
+    }
+  ]
+}

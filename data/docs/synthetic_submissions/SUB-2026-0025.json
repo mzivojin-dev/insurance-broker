@@ -1,0 +1,38 @@
+{
+  "submission_id": "SUB-2026-0025",
+  "named_insured": "Reid-Hamilton",
+  "dba": "Ltd",
+  "fein": "94-6093309",
+  "effective_date": "2027-01-01",
+  "business_description": "Integrated responsive structure",
+  "years_in_business": 36,
+  "locations": [
+    {
+      "location_id": "LOC-1",
+      "address": "39151 Gomez Cape Suite 397",
+      "city": "Stephanieport",
+      "province": "ON",
+      "year_built": 2002,
+      "construction": "Steel",
+      "occupancy": "Warehouse / office",
+      "building_tiv": 1981085,
+      "contents_tiv": 691519,
+      "deductible": 20994
+    }
+  ],
+  "payroll": 2380874,
+  "revenue": 6331705,
+  "employees": 205,
+  "prior_carrier": "Chan PLC",
+  "losses": [
+    {
+      "policy_year": "2022",
+      "claim_date": "2025-10-20",
+      "claim_number": "CLM-77260",
+      "status": "Open",
+      "paid": 10936,
+      "reserve": 34601,
+      "description": "Consequuntur quo rem perspiciatis beatae dicta totam."
+    }
+  ]
+}

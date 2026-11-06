@@ -1,0 +1,38 @@
+{
+  "submission_id": "SUB-2026-0046",
+  "named_insured": "Rogers, Smith and Carlson",
+  "dba": "and Sons",
+  "fein": "89-5399842",
+  "effective_date": "2027-01-06",
+  "business_description": "Future-proofed exuding interface",
+  "years_in_business": 14,
+  "locations": [
+    {
+      "location_id": "LOC-1",
+      "address": "2140 Christopher Fork",
+      "city": "Williamshaven",
+      "province": "ON",
+      "year_built": 2003,
+      "construction": "Masonry",
+      "occupancy": "Warehouse / office",
+      "building_tiv": 4218196,
+      "contents_tiv": 98992,
+      "deductible": 2636
+    }
+  ],
+  "payroll": 3173495,
+  "revenue": 3301982,
+  "employees": 72,
+  "prior_carrier": "Hess, Osborne and Lyons",
+  "losses": [
+    {
+      "policy_year": "2024",
+      "claim_date": "2026-07-19",
+      "claim_number": "CLM-75206",
+      "status": "Open",
+      "paid": 113893,
+      "reserve": 66973,
+      "description": "Ab ipsum facilis accusamus adipisci culpa."
+    }
+  ]
+}

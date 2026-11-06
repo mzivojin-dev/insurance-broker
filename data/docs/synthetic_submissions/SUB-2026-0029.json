@@ -1,0 +1,38 @@
+{
+  "submission_id": "SUB-2026-0029",
+  "named_insured": "Rivas LLC",
+  "dba": "Ltd",
+  "fein": "42-5205188",
+  "effective_date": "2027-01-12",
+  "business_description": "Virtual zero administration infrastructure",
+  "years_in_business": 25,
+  "locations": [
+    {
+      "location_id": "LOC-1",
+      "address": "855 Calderon Skyway",
+      "city": "West Rebecca",
+      "province": "ON",
+      "year_built": 1990,
+      "construction": "Steel",
+      "occupancy": "Warehouse / office",
+      "building_tiv": 4387887,
+      "contents_tiv": 763741,
+      "deductible": 6078
+    }
+  ],
+  "payroll": 552018,
+  "revenue": 5946674,
+  "employees": 171,
+  "prior_carrier": "Saunders, Hester and Shaw",
+  "losses": [
+    {
+      "policy_year": "2023",
+      "claim_date": "2025-05-30",
+      "claim_number": "CLM-49309",
+      "status": "Open",
+      "paid": 43399,
+      "reserve": 22357,
+      "description": "Quas assumenda delectus ex tenetur cum dolore vero."
+    }
+  ]
+}

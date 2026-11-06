@@ -1,0 +1,38 @@
+{
+  "submission_id": "SUB-2026-0014",
+  "named_insured": "Price, English and Hardin",
+  "dba": "LLC",
+  "fein": "56-9412071",
+  "effective_date": "2026-12-21",
+  "business_description": "Digitized global implementation",
+  "years_in_business": 11,
+  "locations": [
+    {
+      "location_id": "LOC-1",
+      "address": "57405 Conrad Square Apt. 839",
+      "city": "Port Beth",
+      "province": "ON",
+      "year_built": 2024,
+      "construction": "Steel",
+      "occupancy": "Warehouse / office",
+      "building_tiv": 409189,
+      "contents_tiv": 909974,
+      "deductible": 18701
+    }
+  ],
+  "payroll": 3707540,
+  "revenue": 6412925,
+  "employees": 224,
+  "prior_carrier": "Griffith-Hernandez",
+  "losses": [
+    {
+      "policy_year": "2023",
+      "claim_date": "2026-05-09",
+      "claim_number": "CLM-94191",
+      "status": "Open",
+      "paid": 117575,
+      "reserve": 16337,
+      "description": "Eveniet fuga doloremque ullam sed totam nulla."
+    }
+  ]
+}

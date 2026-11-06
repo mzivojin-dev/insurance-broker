@@ -1,0 +1,28 @@
+{
+  "submission_id": "SUB-2026-0063",
+  "named_insured": "Willis-Wagner",
+  "dba": "PLC",
+  "fein": "24-1520726",
+  "effective_date": "2027-01-23",
+  "business_description": "Automated zero-defect standardization",
+  "years_in_business": 12,
+  "locations": [
+    {
+      "location_id": "LOC-1",
+      "address": "203 Kurt Extensions Apt. 002",
+      "city": "Sandovalmouth",
+      "province": "ON",
+      "year_built": 1998,
+      "construction": "Steel",
+      "occupancy": "Warehouse / office",
+      "building_tiv": 2275230,
+      "contents_tiv": 617891,
+      "deductible": 16485
+    }
+  ],
+  "payroll": 1346305,
+  "revenue": 9826223,
+  "employees": 69,
+  "prior_carrier": "Moore Ltd",
+  "losses": []
+}

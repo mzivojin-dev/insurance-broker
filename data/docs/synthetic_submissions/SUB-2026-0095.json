@@ -1,0 +1,38 @@
+{
+  "submission_id": "SUB-2026-0095",
+  "named_insured": "Jones LLC",
+  "dba": "LLC",
+  "fein": "65-8982597",
+  "effective_date": "2026-12-19",
+  "business_description": "Public-key eco-centric array",
+  "years_in_business": 16,
+  "locations": [
+    {
+      "location_id": "LOC-1",
+      "address": "545 Vasquez Court Suite 565",
+      "city": "North Elizabethview",
+      "province": "ON",
+      "year_built": 2007,
+      "construction": "Frame",
+      "occupancy": "Warehouse / office",
+      "building_tiv": 4999184,
+      "contents_tiv": 782211,
+      "deductible": 8867
+    }
+  ],
+  "payroll": 658276,
+  "revenue": 1855468,
+  "employees": 101,
+  "prior_carrier": "Hernandez LLC",
+  "losses": [
+    {
+      "policy_year": "2025",
+      "claim_date": "2025-11-20",
+      "claim_number": "CLM-64570",
+      "status": "Open",
+      "paid": 135796,
+      "reserve": 24476,
+      "description": "Hic eveniet consequatur iure praesentium voluptatum repudiandae."
+    }
+  ]
+}

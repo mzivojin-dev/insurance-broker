@@ -1,0 +1,28 @@
+{
+  "submission_id": "SUB-2026-0030",
+  "named_insured": "Carter Inc",
+  "dba": "LLC",
+  "fein": "82-9987286",
+  "effective_date": "2026-11-11",
+  "business_description": "Intuitive contextually-based superstructure",
+  "years_in_business": 24,
+  "locations": [
+    {
+      "location_id": "LOC-1",
+      "address": "8552 Patterson Summit Apt. 800",
+      "city": "East Elizabeth",
+      "province": "ON",
+      "year_built": 1987,
+      "construction": "Frame",
+      "occupancy": "Warehouse / office",
+      "building_tiv": 4787800,
+      "contents_tiv": 501882,
+      "deductible": 12024
+    }
+  ],
+  "payroll": 739971,
+  "revenue": 9426733,
+  "employees": 66,
+  "prior_carrier": "Mclaughlin-Acevedo",
+  "losses": []
+}

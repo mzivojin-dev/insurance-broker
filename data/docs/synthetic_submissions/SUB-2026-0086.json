@@ -1,0 +1,38 @@
+{
+  "submission_id": "SUB-2026-0086",
+  "named_insured": "Carr-Stafford",
+  "dba": "Ltd",
+  "fein": "98-4231813",
+  "effective_date": "2026-11-23",
+  "business_description": "Fully-configurable multi-tasking implementation",
+  "years_in_business": 38,
+  "locations": [
+    {
+      "location_id": "LOC-1",
+      "address": "88243 Jennifer Extension",
+      "city": "Nicolebury",
+      "province": "ON",
+      "year_built": 1998,
+      "construction": "Frame",
+      "occupancy": "Warehouse / office",
+      "building_tiv": 1160889,
+      "contents_tiv": 349206,
+      "deductible": 22043
+    }
+  ],
+  "payroll": 653771,
+  "revenue": 11663379,
+  "employees": 97,
+  "prior_carrier": "Nguyen-Palmer",
+  "losses": [
+    {
+      "policy_year": "2023",
+      "claim_date": "2024-09-30",
+      "claim_number": "CLM-79644",
+      "status": "Closed",
+      "paid": 9908,
+      "reserve": 57088,
+      "description": "Praesentium reiciendis vitae eum quo impedit."
+    }
+  ]
+}

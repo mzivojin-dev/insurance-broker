@@ -1,0 +1,38 @@
+{
+  "submission_id": "SUB-2026-0084",
+  "named_insured": "Fry, Barnes and Bennett",
+  "dba": "Inc",
+  "fein": "59-5916892",
+  "effective_date": "2027-01-06",
+  "business_description": "Virtual dedicated protocol",
+  "years_in_business": 27,
+  "locations": [
+    {
+      "location_id": "LOC-1",
+      "address": "24207 Harris Bridge",
+      "city": "East Timothyberg",
+      "province": "ON",
+      "year_built": 2023,
+      "construction": "Masonry",
+      "occupancy": "Warehouse / office",
+      "building_tiv": 1317069,
+      "contents_tiv": 989591,
+      "deductible": 9975
+    }
+  ],
+  "payroll": 3170644,
+  "revenue": 4327716,
+  "employees": 162,
+  "prior_carrier": "Hanson-Sloan",
+  "losses": [
+    {
+      "policy_year": "2024",
+      "claim_date": "2024-04-01",
+      "claim_number": "CLM-63674",
+      "status": "Open",
+      "paid": 32438,
+      "reserve": 50336,
+      "description": "Occaecati exercitationem maxime vero iste eaque placeat ipsa nesciunt debitis."
+    }
+  ]
+}

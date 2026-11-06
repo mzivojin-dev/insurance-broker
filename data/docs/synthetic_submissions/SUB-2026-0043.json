@@ -1,0 +1,28 @@
+{
+  "submission_id": "SUB-2026-0043",
+  "named_insured": "Woods Ltd",
+  "dba": "Ltd",
+  "fein": "83-6535844",
+  "effective_date": "2026-11-14",
+  "business_description": "Robust 24hour definition",
+  "years_in_business": 28,
+  "locations": [
+    {
+      "location_id": "LOC-1",
+      "address": "773 Joseph Mills Apt. 493",
+      "city": "Lake Andreaview",
+      "province": "ON",
+      "year_built": 2016,
+      "construction": "Frame",
+      "occupancy": "Warehouse / office",
+      "building_tiv": 2380133,
+      "contents_tiv": 78912,
+      "deductible": 6088
+    }
+  ],
+  "payroll": 3460634,
+  "revenue": 1832192,
+  "employees": 224,
+  "prior_carrier": "Roberts, Chambers and Mitchell",
+  "losses": []
+}

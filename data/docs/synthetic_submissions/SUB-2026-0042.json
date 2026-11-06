@@ -1,0 +1,38 @@
+{
+  "submission_id": "SUB-2026-0042",
+  "named_insured": "Richardson, Hale and Jackson",
+  "dba": "LLC",
+  "fein": "45-1621518",
+  "effective_date": "2026-12-18",
+  "business_description": "Intuitive uniform service-desk",
+  "years_in_business": 1,
+  "locations": [
+    {
+      "location_id": "LOC-1",
+      "address": "9339 Jonathan Haven Apt. 036",
+      "city": "Walkerburgh",
+      "province": "ON",
+      "year_built": 1974,
+      "construction": "Steel",
+      "occupancy": "Warehouse / office",
+      "building_tiv": 3768275,
+      "contents_tiv": 390569,
+      "deductible": 6877
+    }
+  ],
+  "payroll": 706369,
+  "revenue": 8313688,
+  "employees": 161,
+  "prior_carrier": "Rodriguez, Saunders and Vargas",
+  "losses": [
+    {
+      "policy_year": "2025",
+      "claim_date": "2026-03-27",
+      "claim_number": "CLM-63777",
+      "status": "Closed",
+      "paid": 8505,
+      "reserve": 54219,
+      "description": "Aliquid excepturi ducimus repudiandae ipsum voluptatem error dignissimos minus."
+    }
+  ]
+}

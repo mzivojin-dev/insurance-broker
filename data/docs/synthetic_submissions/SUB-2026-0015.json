@@ -1,0 +1,28 @@
+{
+  "submission_id": "SUB-2026-0015",
+  "named_insured": "Howard LLC",
+  "dba": "Inc",
+  "fein": "28-8339202",
+  "effective_date": "2026-11-13",
+  "business_description": "Cross-group 4thgeneration core",
+  "years_in_business": 31,
+  "locations": [
+    {
+      "location_id": "LOC-1",
+      "address": "2384 Hernandez Wells",
+      "city": "Cohenville",
+      "province": "ON",
+      "year_built": 2016,
+      "construction": "Frame",
+      "occupancy": "Warehouse / office",
+      "building_tiv": 3413636,
+      "contents_tiv": 322429,
+      "deductible": 4366
+    }
+  ],
+  "payroll": 2270657,
+  "revenue": 9475447,
+  "employees": 217,
+  "prior_carrier": "Stafford, Fuentes and Copeland",
+  "losses": []
+}

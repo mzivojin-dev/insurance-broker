@@ -1,0 +1,38 @@
+{
+  "submission_id": "SUB-2026-0039",
+  "named_insured": "Riley, Tucker and Jones",
+  "dba": "and Sons",
+  "fein": "49-1272406",
+  "effective_date": "2026-11-12",
+  "business_description": "Managed responsive standardization",
+  "years_in_business": 11,
+  "locations": [
+    {
+      "location_id": "LOC-1",
+      "address": "927 Michael Crossroad",
+      "city": "Johnside",
+      "province": "ON",
+      "year_built": 2010,
+      "construction": "Steel",
+      "occupancy": "Warehouse / office",
+      "building_tiv": 739629,
+      "contents_tiv": 368188,
+      "deductible": 9013
+    }
+  ],
+  "payroll": 2243622,
+  "revenue": 1463119,
+  "employees": 153,
+  "prior_carrier": "Davis Ltd",
+  "losses": [
+    {
+      "policy_year": "2022",
+      "claim_date": "2025-11-12",
+      "claim_number": "CLM-98636",
+      "status": "Open",
+      "paid": 47308,
+      "reserve": 3025,
+      "description": "Necessitatibus reprehenderit sapiente autem eum nihil facilis sequi sint nihil."
+    }
+  ]
+}

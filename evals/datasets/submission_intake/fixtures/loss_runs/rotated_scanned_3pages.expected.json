@@ -1,0 +1,6 @@
+{
+  "claims": [
+    {"date_of_loss": "2024-03-14", "paid": 12500.0, "status": "closed"},
+    {"date_of_loss": "2025-08-02", "paid": 0.0, "status": "open"}
+  ]
+}

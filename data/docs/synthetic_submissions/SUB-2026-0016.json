@@ -1,0 +1,38 @@
+{
+  "submission_id": "SUB-2026-0016",
+  "named_insured": "Davidson, Barber and Kerr",
+  "dba": "and Sons",
+  "fein": "61-7685081",
+  "effective_date": "2027-01-09",
+  "business_description": "Business-focused multimedia database",
+  "years_in_business": 12,
+  "locations": [
+    {
+      "location_id": "LOC-1",
+      "address": "872 Johnson Ford",
+      "city": "Powellchester",
+      "province": "ON",
+      "year_built": 2003,
+      "construction": "Masonry",
+      "occupancy": "Warehouse / office",
+      "building_tiv": 4771017,
+      "contents_tiv": 664350,
+      "deductible": 12902
+    }
+  ],
+  "payroll": 1997587,
+  "revenue": 8119860,
+  "employees": 63,
+  "prior_carrier": "Torres-Harris",
+  "losses": [
+    {
+      "policy_year": "2024",
+      "claim_date": "2025-05-13",
+      "claim_number": "CLM-43510",
+      "status": "Open",
+      "paid": 60226,
+      "reserve": 17605,
+      "description": "Ipsum doloremque libero laboriosam."
+    }
+  ]
+}

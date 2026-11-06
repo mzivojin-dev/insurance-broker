@@ -1,0 +1,28 @@
+{
+  "submission_id": "SUB-2026-0080",
+  "named_insured": "Salazar-Greene",
+  "dba": "Group",
+  "fein": "25-1399292",
+  "effective_date": "2026-11-19",
+  "business_description": "Multi-lateral 4thgeneration collaboration",
+  "years_in_business": 5,
+  "locations": [
+    {
+      "location_id": "LOC-1",
+      "address": "09193 Spencer Hollow",
+      "city": "Port Billy",
+      "province": "ON",
+      "year_built": 1972,
+      "construction": "Frame",
+      "occupancy": "Warehouse / office",
+      "building_tiv": 862986,
+      "contents_tiv": 236454,
+      "deductible": 2566
+    }
+  ],
+  "payroll": 1450055,
+  "revenue": 8085907,
+  "employees": 59,
+  "prior_carrier": "Herrera PLC",
+  "losses": []
+}

@@ -1,0 +1,38 @@
+{
+  "submission_id": "SUB-2026-0088",
+  "named_insured": "Moore, Scott and Warren",
+  "dba": "and Sons",
+  "fein": "82-9051916",
+  "effective_date": "2026-11-21",
+  "business_description": "Open-source static core",
+  "years_in_business": 27,
+  "locations": [
+    {
+      "location_id": "LOC-1",
+      "address": "0656 Marsh Island Apt. 265",
+      "city": "East Miguel",
+      "province": "ON",
+      "year_built": 2021,
+      "construction": "Frame",
+      "occupancy": "Warehouse / office",
+      "building_tiv": 1353665,
+      "contents_tiv": 911842,
+      "deductible": 20129
+    }
+  ],
+  "payroll": 3063481,
+  "revenue": 7624858,
+  "employees": 244,
+  "prior_carrier": "Harrison and Sons",
+  "losses": [
+    {
+      "policy_year": "2025",
+      "claim_date": "2023-11-08",
+      "claim_number": "CLM-94873",
+      "status": "Open",
+      "paid": 104760,
+      "reserve": 51547,
+      "description": "Officiis quod quos quisquam inventore corporis atque culpa totam ea."
+    }
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "submission_id": "SUB-2026-0005",
+  "named_insured": "Perry and Sons",
+  "dba": "LLC",
+  "fein": "40-8756589",
+  "effective_date": "2026-12-13",
+  "business_description": "Persistent analyzing projection",
+  "years_in_business": 33,
+  "locations": [
+    {
+      "location_id": "LOC-1",
+      "address": "644 Harrison Parkways Suite 664",
+      "city": "North Jeffreytown",
+      "province": "ON",
+      "year_built": 2023,
+      "construction": "Masonry",
+      "occupancy": "Warehouse / office",
+      "building_tiv": 4590970,
+      "contents_tiv": 380592,
+      "deductible": 18058
+    }
+  ],
+  "payroll": 2851039,
+  "revenue": 8850062,
+  "employees": 158,
+  "prior_carrier": "Carpenter, Mckenzie and Osborne",
+  "losses": [
+    {
+      "policy_year": "2023",
+      "claim_date": "2025-09-16",
+      "claim_number": "CLM-35118",
+      "status": "Closed",
+      "paid": 59543,
+      "reserve": 57569,
+      "description": "Excepturi dolor vero iusto suscipit beatae expedita aliquid placeat."
+    }
+  ]
+}

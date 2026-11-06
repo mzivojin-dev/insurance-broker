@@ -1,0 +1,38 @@
+{
+  "submission_id": "SUB-2026-0060",
+  "named_insured": "Humphrey Ltd",
+  "dba": "PLC",
+  "fein": "52-8368364",
+  "effective_date": "2026-11-21",
+  "business_description": "Seamless interactive instruction set",
+  "years_in_business": 36,
+  "locations": [
+    {
+      "location_id": "LOC-1",
+      "address": "281 Audrey Brook Apt. 621",
+      "city": "Markhaven",
+      "province": "ON",
+      "year_built": 1975,
+      "construction": "Frame",
+      "occupancy": "Warehouse / office",
+      "building_tiv": 1567637,
+      "contents_tiv": 747651,
+      "deductible": 22317
+    }
+  ],
+  "payroll": 2544808,
+  "revenue": 6142756,
+  "employees": 4,
+  "prior_carrier": "Torres LLC",
+  "losses": [
+    {
+      "policy_year": "2022",
+      "claim_date": "2024-07-25",
+      "claim_number": "CLM-38090",
+      "status": "Open",
+      "paid": 111730,
+      "reserve": 73123,
+      "description": "Quaerat molestias aperiam veniam error."
+    }
+  ]
+}

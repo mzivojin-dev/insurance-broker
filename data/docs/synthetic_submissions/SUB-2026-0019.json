@@ -1,0 +1,28 @@
+{
+  "submission_id": "SUB-2026-0019",
+  "named_insured": "Gonzales, Miller and Jones",
+  "dba": "Group",
+  "fein": "27-8583508",
+  "effective_date": "2027-01-14",
+  "business_description": "Cloned modular support",
+  "years_in_business": 28,
+  "locations": [
+    {
+      "location_id": "LOC-1",
+      "address": "032 Sherry Falls Suite 405",
+      "city": "Lake Levi",
+      "province": "ON",
+      "year_built": 1992,
+      "construction": "Steel",
+      "occupancy": "Warehouse / office",
+      "building_tiv": 4744739,
+      "contents_tiv": 725463,
+      "deductible": 11061
+    }
+  ],
+  "payroll": 2121593,
+  "revenue": 3171508,
+  "employees": 56,
+  "prior_carrier": "Torres-Thomas",
+  "losses": []
+}

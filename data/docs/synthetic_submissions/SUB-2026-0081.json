@@ -1,0 +1,38 @@
+{
+  "submission_id": "SUB-2026-0081",
+  "named_insured": "Beasley Inc",
+  "dba": "LLC",
+  "fein": "26-2939792",
+  "effective_date": "2027-01-10",
+  "business_description": "Expanded systemic toolset",
+  "years_in_business": 4,
+  "locations": [
+    {
+      "location_id": "LOC-1",
+      "address": "0706 Miller Points Suite 403",
+      "city": "Chadland",
+      "province": "ON",
+      "year_built": 1984,
+      "construction": "Masonry",
+      "occupancy": "Warehouse / office",
+      "building_tiv": 4144621,
+      "contents_tiv": 338260,
+      "deductible": 3856
+    }
+  ],
+  "payroll": 558860,
+  "revenue": 2242003,
+  "employees": 171,
+  "prior_carrier": "Brandt Group",
+  "losses": [
+    {
+      "policy_year": "2022",
+      "claim_date": "2026-10-17",
+      "claim_number": "CLM-55949",
+      "status": "Open",
+      "paid": 94111,
+      "reserve": 60964,
+      "description": "Recusandae aspernatur ad reiciendis exercitationem doloremque dicta temporibus minima perspiciatis illo."
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "submission_id": "SUB-2026-0010",
+  "named_insured": "Burns Inc",
+  "dba": "Ltd",
+  "fein": "77-9425360",
+  "effective_date": "2026-12-13",
+  "business_description": "Inverse analyzing time-frame",
+  "years_in_business": 22,
+  "locations": [
+    {
+      "location_id": "LOC-1",
+      "address": "91106 Cummings Village",
+      "city": "Port Sheilahaven",
+      "province": "ON",
+      "year_built": 2005,
+      "construction": "Steel",
+      "occupancy": "Warehouse / office",
+      "building_tiv": 4940567,
+      "contents_tiv": 669056,
+      "deductible": 14861
+    }
+  ],
+  "payroll": 1636100,
+  "revenue": 5255903,
+  "employees": 22,
+  "prior_carrier": "Maynard, Lawrence and Sutton",
+  "losses": []
+}

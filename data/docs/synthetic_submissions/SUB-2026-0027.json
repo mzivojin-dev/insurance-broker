@@ -1,0 +1,28 @@
+{
+  "submission_id": "SUB-2026-0027",
+  "named_insured": "Hudson, Smith and Ward",
+  "dba": "Ltd",
+  "fein": "63-7682887",
+  "effective_date": "2027-01-09",
+  "business_description": "Integrated full-range attitude",
+  "years_in_business": 39,
+  "locations": [
+    {
+      "location_id": "LOC-1",
+      "address": "879 Penny Corner Suite 732",
+      "city": "Lake Shannon",
+      "province": "ON",
+      "year_built": 2008,
+      "construction": "Steel",
+      "occupancy": "Warehouse / office",
+      "building_tiv": 3955612,
+      "contents_tiv": 535633,
+      "deductible": 16981
+    }
+  ],
+  "payroll": 3879839,
+  "revenue": 5932912,
+  "employees": 222,
+  "prior_carrier": "Harrell-Young",
+  "losses": []
+}

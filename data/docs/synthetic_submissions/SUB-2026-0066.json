@@ -1,0 +1,38 @@
+{
+  "submission_id": "SUB-2026-0066",
+  "named_insured": "Holmes PLC",
+  "dba": "Ltd",
+  "fein": "61-6271079",
+  "effective_date": "2027-01-15",
+  "business_description": "Enhanced hybrid process improvement",
+  "years_in_business": 20,
+  "locations": [
+    {
+      "location_id": "LOC-1",
+      "address": "29420 Jennifer Via",
+      "city": "Port Mark",
+      "province": "ON",
+      "year_built": 2005,
+      "construction": "Steel",
+      "occupancy": "Warehouse / office",
+      "building_tiv": 2612362,
+      "contents_tiv": 961462,
+      "deductible": 4942
+    }
+  ],
+  "payroll": 3532686,
+  "revenue": 734252,
+  "employees": 108,
+  "prior_carrier": "Jimenez LLC",
+  "losses": [
+    {
+      "policy_year": "2022",
+      "claim_date": "2025-04-01",
+      "claim_number": "CLM-86340",
+      "status": "Closed",
+      "paid": 129506,
+      "reserve": 17130,
+      "description": "Aspernatur fuga veniam molestiae consectetur pariatur at commodi."
+    }
+  ]
+}

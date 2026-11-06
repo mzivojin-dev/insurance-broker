@@ -1,0 +1,38 @@
+{
+  "submission_id": "SUB-2026-0053",
+  "named_insured": "Hernandez Group",
+  "dba": "PLC",
+  "fein": "80-6463639",
+  "effective_date": "2027-01-17",
+  "business_description": "Profound background frame",
+  "years_in_business": 37,
+  "locations": [
+    {
+      "location_id": "LOC-1",
+      "address": "00480 Terri Flat Suite 131",
+      "city": "Zacharystad",
+      "province": "ON",
+      "year_built": 1990,
+      "construction": "Frame",
+      "occupancy": "Warehouse / office",
+      "building_tiv": 3148085,
+      "contents_tiv": 728554,
+      "deductible": 20818
+    }
+  ],
+  "payroll": 750666,
+  "revenue": 7804839,
+  "employees": 48,
+  "prior_carrier": "Lopez, Holmes and Campbell",
+  "losses": [
+    {
+      "policy_year": "2023",
+      "claim_date": "2026-06-12",
+      "claim_number": "CLM-46615",
+      "status": "Closed",
+      "paid": 75495,
+      "reserve": 15594,
+      "description": "Perspiciatis eum in veniam nemo ad nihil."
+    }
+  ]
+}

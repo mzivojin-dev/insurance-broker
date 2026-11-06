@@ -1,0 +1,38 @@
+{
+  "submission_id": "SUB-2026-0035",
+  "named_insured": "Powell PLC",
+  "dba": "Ltd",
+  "fein": "72-4577214",
+  "effective_date": "2026-12-09",
+  "business_description": "Networked impactful encryption",
+  "years_in_business": 28,
+  "locations": [
+    {
+      "location_id": "LOC-1",
+      "address": "52639 Joyce Unions Apt. 230",
+      "city": "South Charles",
+      "province": "ON",
+      "year_built": 1997,
+      "construction": "Masonry",
+      "occupancy": "Warehouse / office",
+      "building_tiv": 3545310,
+      "contents_tiv": 236747,
+      "deductible": 11833
+    }
+  ],
+  "payroll": 496569,
+  "revenue": 9773000,
+  "employees": 210,
+  "prior_carrier": "Owens-Rangel",
+  "losses": [
+    {
+      "policy_year": "2022",
+      "claim_date": "2024-11-06",
+      "claim_number": "CLM-41985",
+      "status": "Closed",
+      "paid": 102800,
+      "reserve": 16920,
+      "description": "Deleniti nihil hic quos incidunt dolorem."
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "submission_id": "SUB-2026-0031",
+  "named_insured": "Wood, Anderson and Andrews",
+  "dba": "PLC",
+  "fein": "74-3640717",
+  "effective_date": "2027-01-20",
+  "business_description": "Ameliorated systematic functionalities",
+  "years_in_business": 4,
+  "locations": [
+    {
+      "location_id": "LOC-1",
+      "address": "712 Stone Manors Apt. 418",
+      "city": "South Michael",
+      "province": "ON",
+      "year_built": 2016,
+      "construction": "Frame",
+      "occupancy": "Warehouse / office",
+      "building_tiv": 554465,
+      "contents_tiv": 465418,
+      "deductible": 20413
+    }
+  ],
+  "payroll": 2750689,
+  "revenue": 4600709,
+  "employees": 137,
+  "prior_carrier": "Watts-Alexander",
+  "losses": []
+}

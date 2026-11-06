@@ -1,0 +1,38 @@
+{
+  "submission_id": "SUB-2026-0034",
+  "named_insured": "Brown Group",
+  "dba": "LLC",
+  "fein": "40-6985537",
+  "effective_date": "2026-11-26",
+  "business_description": "Upgradable didactic groupware",
+  "years_in_business": 38,
+  "locations": [
+    {
+      "location_id": "LOC-1",
+      "address": "470 Steven Green",
+      "city": "Juanburgh",
+      "province": "ON",
+      "year_built": 1982,
+      "construction": "Frame",
+      "occupancy": "Warehouse / office",
+      "building_tiv": 4045252,
+      "contents_tiv": 492597,
+      "deductible": 14028
+    }
+  ],
+  "payroll": 469133,
+  "revenue": 2454435,
+  "employees": 8,
+  "prior_carrier": "Hunter, Holland and Key",
+  "losses": [
+    {
+      "policy_year": "2024",
+      "claim_date": "2025-10-19",
+      "claim_number": "CLM-59698",
+      "status": "Closed",
+      "paid": 120763,
+      "reserve": 42755,
+      "description": "Ipsa porro cum modi modi voluptate consequatur vel pariatur soluta."
+    }
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "submission_id": "SUB-2026-0048",
+  "named_insured": "Davis, Thomas and Hoover",
+  "dba": "and Sons",
+  "fein": "49-4005580",
+  "effective_date": "2026-12-01",
+  "business_description": "Ergonomic client-server contingency",
+  "years_in_business": 38,
+  "locations": [
+    {
+      "location_id": "LOC-1",
+      "address": "4206 Carter Manors Suite 715",
+      "city": "Garzashire",
+      "province": "ON",
+      "year_built": 1999,
+      "construction": "Steel",
+      "occupancy": "Warehouse / office",
+      "building_tiv": 788578,
+      "contents_tiv": 958869,
+      "deductible": 17229
+    }
+  ],
+  "payroll": 3580871,
+  "revenue": 3649063,
+  "employees": 105,
+  "prior_carrier": "Duncan, Newman and Taylor",
+  "losses": [
+    {
+      "policy_year": "2022",
+      "claim_date": "2024-12-04",
+      "claim_number": "CLM-41274",
+      "status": "Open",
+      "paid": 18911,
+      "reserve": 5023,
+      "description": "Natus impedit enim occaecati quam sed illo sit nostrum."
+    }
+  ]
+}

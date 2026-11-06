@@ -1,0 +1,38 @@
+{
+  "submission_id": "SUB-2026-0074",
+  "named_insured": "Ruiz-Lamb",
+  "dba": "PLC",
+  "fein": "81-1112618",
+  "effective_date": "2026-12-01",
+  "business_description": "Expanded zero tolerance algorithm",
+  "years_in_business": 25,
+  "locations": [
+    {
+      "location_id": "LOC-1",
+      "address": "66120 Allison Groves",
+      "city": "West Debramouth",
+      "province": "ON",
+      "year_built": 1973,
+      "construction": "Masonry",
+      "occupancy": "Warehouse / office",
+      "building_tiv": 1077282,
+      "contents_tiv": 122565,
+      "deductible": 12474
+    }
+  ],
+  "payroll": 1043228,
+  "revenue": 8102657,
+  "employees": 171,
+  "prior_carrier": "Jimenez, Bowman and Brooks",
+  "losses": [
+    {
+      "policy_year": "2024",
+      "claim_date": "2025-02-05",
+      "claim_number": "CLM-46667",
+      "status": "Open",
+      "paid": 33908,
+      "reserve": 48160,
+      "description": "Quod natus laudantium sapiente officiis dolorem voluptate."
+    }
+  ]
+}

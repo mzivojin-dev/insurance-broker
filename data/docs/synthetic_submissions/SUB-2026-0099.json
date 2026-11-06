@@ -1,0 +1,38 @@
+{
+  "submission_id": "SUB-2026-0099",
+  "named_insured": "Manning and Sons",
+  "dba": "PLC",
+  "fein": "61-5821228",
+  "effective_date": "2027-01-29",
+  "business_description": "Fully-configurable multi-state instruction set",
+  "years_in_business": 8,
+  "locations": [
+    {
+      "location_id": "LOC-1",
+      "address": "25675 Kenneth Fork",
+      "city": "North Robertview",
+      "province": "ON",
+      "year_built": 2010,
+      "construction": "Masonry",
+      "occupancy": "Warehouse / office",
+      "building_tiv": 3910965,
+      "contents_tiv": 748752,
+      "deductible": 2278
+    }
+  ],
+  "payroll": 809948,
+  "revenue": 5561386,
+  "employees": 164,
+  "prior_carrier": "Howell-Blair",
+  "losses": [
+    {
+      "policy_year": "2025",
+      "claim_date": "2025-05-23",
+      "claim_number": "CLM-52637",
+      "status": "Closed",
+      "paid": 144987,
+      "reserve": 70669,
+      "description": "Sed laborum impedit magni aliquid iure."
+    }
+  ]
+}

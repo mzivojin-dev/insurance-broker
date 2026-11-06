@@ -1,0 +1,38 @@
+{
+  "submission_id": "SUB-2026-0051",
+  "named_insured": "Ray Inc",
+  "dba": "Group",
+  "fein": "55-7535867",
+  "effective_date": "2027-01-08",
+  "business_description": "Visionary regional strategy",
+  "years_in_business": 1,
+  "locations": [
+    {
+      "location_id": "LOC-1",
+      "address": "01402 Brittney Path Suite 524",
+      "city": "West Matthewberg",
+      "province": "ON",
+      "year_built": 1995,
+      "construction": "Masonry",
+      "occupancy": "Warehouse / office",
+      "building_tiv": 4976316,
+      "contents_tiv": 310759,
+      "deductible": 19698
+    }
+  ],
+  "payroll": 798938,
+  "revenue": 8401580,
+  "employees": 122,
+  "prior_carrier": "Clark, Williams and Gill",
+  "losses": [
+    {
+      "policy_year": "2024",
+      "claim_date": "2024-09-24",
+      "claim_number": "CLM-81304",
+      "status": "Open",
+      "paid": 35347,
+      "reserve": 58294,
+      "description": "Rem ducimus omnis iste omnis."
+    }
+  ]
+}

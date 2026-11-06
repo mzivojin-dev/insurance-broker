@@ -1,0 +1,28 @@
+{
+  "submission_id": "SUB-2026-0097",
+  "named_insured": "Suarez, Smith and Tucker",
+  "dba": "Group",
+  "fein": "88-8808406",
+  "effective_date": "2027-01-19",
+  "business_description": "Public-key disintermediate customer loyalty",
+  "years_in_business": 28,
+  "locations": [
+    {
+      "location_id": "LOC-1",
+      "address": "424 John Ridge Apt. 093",
+      "city": "Lake Lindafurt",
+      "province": "ON",
+      "year_built": 2018,
+      "construction": "Steel",
+      "occupancy": "Warehouse / office",
+      "building_tiv": 4307354,
+      "contents_tiv": 600967,
+      "deductible": 15406
+    }
+  ],
+  "payroll": 1816855,
+  "revenue": 4784340,
+  "employees": 146,
+  "prior_carrier": "Santiago LLC",
+  "losses": []
+}

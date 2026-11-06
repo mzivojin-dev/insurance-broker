@@ -1,0 +1,38 @@
+{
+  "submission_id": "SUB-2026-0065",
+  "named_insured": "Wilson, Jackson and Snow",
+  "dba": "and Sons",
+  "fein": "56-5897496",
+  "effective_date": "2026-11-14",
+  "business_description": "Switchable tertiary Local Area Network",
+  "years_in_business": 10,
+  "locations": [
+    {
+      "location_id": "LOC-1",
+      "address": "071 Andrea Shores Apt. 515",
+      "city": "Hamptontown",
+      "province": "ON",
+      "year_built": 2023,
+      "construction": "Masonry",
+      "occupancy": "Warehouse / office",
+      "building_tiv": 4782331,
+      "contents_tiv": 149235,
+      "deductible": 10674
+    }
+  ],
+  "payroll": 2270110,
+  "revenue": 10289371,
+  "employees": 66,
+  "prior_carrier": "Hayes LLC",
+  "losses": [
+    {
+      "policy_year": "2022",
+      "claim_date": "2025-06-22",
+      "claim_number": "CLM-86961",
+      "status": "Closed",
+      "paid": 138639,
+      "reserve": 74830,
+      "description": "Odio quia rem possimus eum quam voluptatibus."
+    }
+  ]
+}

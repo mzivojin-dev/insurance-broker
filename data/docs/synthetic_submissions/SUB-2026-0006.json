@@ -1,0 +1,38 @@
+{
+  "submission_id": "SUB-2026-0006",
+  "named_insured": "Estrada Group",
+  "dba": "and Sons",
+  "fein": "84-5502782",
+  "effective_date": "2026-12-03",
+  "business_description": "Business-focused intangible functionalities",
+  "years_in_business": 1,
+  "locations": [
+    {
+      "location_id": "LOC-1",
+      "address": "99882 Jones Ville",
+      "city": "South Patricia",
+      "province": "ON",
+      "year_built": 1996,
+      "construction": "Steel",
+      "occupancy": "Warehouse / office",
+      "building_tiv": 3317391,
+      "contents_tiv": 925722,
+      "deductible": 9666
+    }
+  ],
+  "payroll": 2714906,
+  "revenue": 1516085,
+  "employees": 22,
+  "prior_carrier": "Montes, Reynolds and Jackson",
+  "losses": [
+    {
+      "policy_year": "2025",
+      "claim_date": "2026-07-02",
+      "claim_number": "CLM-10298",
+      "status": "Closed",
+      "paid": 147548,
+      "reserve": 21616,
+      "description": "Iure odit incidunt optio provident dolor fuga."
+    }
+  ]
+}

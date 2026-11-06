@@ -1,0 +1,6 @@
+{
+  "named_insured": "Rise & Shine Bakery LLC",
+  "fein": "12-3456789",
+  "effective_date": "2027-01-01",
+  "lines_of_business": ["general_liability", "commercial_property"]
+}

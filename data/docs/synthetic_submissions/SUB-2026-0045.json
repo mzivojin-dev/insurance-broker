@@ -1,0 +1,38 @@
+{
+  "submission_id": "SUB-2026-0045",
+  "named_insured": "Smith, Parker and Gonzales",
+  "dba": "PLC",
+  "fein": "25-8498787",
+  "effective_date": "2026-11-07",
+  "business_description": "Universal user-facing functionalities",
+  "years_in_business": 36,
+  "locations": [
+    {
+      "location_id": "LOC-1",
+      "address": "54136 Chambers Freeway",
+      "city": "Johnton",
+      "province": "ON",
+      "year_built": 1979,
+      "construction": "Steel",
+      "occupancy": "Warehouse / office",
+      "building_tiv": 3865611,
+      "contents_tiv": 64071,
+      "deductible": 9784
+    }
+  ],
+  "payroll": 3280869,
+  "revenue": 2610102,
+  "employees": 94,
+  "prior_carrier": "Henderson-Johnson",
+  "losses": [
+    {
+      "policy_year": "2022",
+      "claim_date": "2025-08-03",
+      "claim_number": "CLM-72620",
+      "status": "Closed",
+      "paid": 75999,
+      "reserve": 28315,
+      "description": "Eligendi eaque animi quis eum voluptatibus fugiat voluptate numquam eaque."
+    }
+  ]
+}

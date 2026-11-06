@@ -1,0 +1,28 @@
+{
+  "submission_id": "SUB-2026-0022",
+  "named_insured": "Gardner Ltd",
+  "dba": "Ltd",
+  "fein": "39-4697272",
+  "effective_date": "2026-11-13",
+  "business_description": "Ameliorated even-keeled info-mediaries",
+  "years_in_business": 12,
+  "locations": [
+    {
+      "location_id": "LOC-1",
+      "address": "964 Kyle Motorway",
+      "city": "Port Sabrinaville",
+      "province": "ON",
+      "year_built": 2017,
+      "construction": "Masonry",
+      "occupancy": "Warehouse / office",
+      "building_tiv": 593098,
+      "contents_tiv": 222231,
+      "deductible": 9605
+    }
+  ],
+  "payroll": 310984,
+  "revenue": 8947726,
+  "employees": 229,
+  "prior_carrier": "Vaughn, Arellano and Turner",
+  "losses": []
+}

@@ -1,0 +1,38 @@
+{
+  "submission_id": "SUB-2026-0009",
+  "named_insured": "Chambers, Nelson and Barajas",
+  "dba": "PLC",
+  "fein": "92-5212095",
+  "effective_date": "2027-01-17",
+  "business_description": "Decentralized exuding Local Area Network",
+  "years_in_business": 8,
+  "locations": [
+    {
+      "location_id": "LOC-1",
+      "address": "59617 Martinez Tunnel",
+      "city": "North Lauraborough",
+      "province": "ON",
+      "year_built": 1972,
+      "construction": "Frame",
+      "occupancy": "Warehouse / office",
+      "building_tiv": 2046873,
+      "contents_tiv": 200217,
+      "deductible": 14346
+    }
+  ],
+  "payroll": 1011872,
+  "revenue": 6592854,
+  "employees": 108,
+  "prior_carrier": "Mitchell Ltd",
+  "losses": [
+    {
+      "policy_year": "2023",
+      "claim_date": "2023-12-10",
+      "claim_number": "CLM-82614",
+      "status": "Closed",
+      "paid": 18657,
+      "reserve": 5736,
+      "description": "Eos molestiae consectetur doloribus totam maxime quisquam quae."
+    }
+  ]
+}

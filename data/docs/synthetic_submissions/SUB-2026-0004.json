@@ -1,0 +1,38 @@
+{
+  "submission_id": "SUB-2026-0004",
+  "named_insured": "Lewis, Parks and Martinez",
+  "dba": "Group",
+  "fein": "96-3226087",
+  "effective_date": "2027-01-30",
+  "business_description": "Secured full-range instruction set",
+  "years_in_business": 6,
+  "locations": [
+    {
+      "location_id": "LOC-1",
+      "address": "97528 Adrian Isle",
+      "city": "Georgeside",
+      "province": "ON",
+      "year_built": 1993,
+      "construction": "Masonry",
+      "occupancy": "Warehouse / office",
+      "building_tiv": 2105563,
+      "contents_tiv": 344107,
+      "deductible": 18892
+    }
+  ],
+  "payroll": 2065977,
+  "revenue": 10362061,
+  "employees": 129,
+  "prior_carrier": "Rowe-Brown",
+  "losses": [
+    {
+      "policy_year": "2025",
+      "claim_date": "2026-08-18",
+      "claim_number": "CLM-77407",
+      "status": "Closed",
+      "paid": 145856,
+      "reserve": 60485,
+      "description": "Quam laboriosam reiciendis molestias tenetur voluptates veniam rem."
+    }
+  ]
+}

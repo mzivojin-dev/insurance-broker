@@ -1,0 +1,28 @@
+{
+  "submission_id": "SUB-2026-0096",
+  "named_insured": "Mccarthy Ltd",
+  "dba": "PLC",
+  "fein": "35-7751431",
+  "effective_date": "2026-12-21",
+  "business_description": "Secured eco-centric process improvement",
+  "years_in_business": 1,
+  "locations": [
+    {
+      "location_id": "LOC-1",
+      "address": "73077 Henry Haven Apt. 992",
+      "city": "Amyberg",
+      "province": "ON",
+      "year_built": 2009,
+      "construction": "Frame",
+      "occupancy": "Warehouse / office",
+      "building_tiv": 3634182,
+      "contents_tiv": 380479,
+      "deductible": 19992
+    }
+  ],
+  "payroll": 2966728,
+  "revenue": 5686035,
+  "employees": 167,
+  "prior_carrier": "Johnson Inc",
+  "losses": []
+}

@@ -1,0 +1,38 @@
+{
+  "submission_id": "SUB-2026-0055",
+  "named_insured": "Henderson, Brown and Cook",
+  "dba": "LLC",
+  "fein": "43-2800866",
+  "effective_date": "2026-12-30",
+  "business_description": "Team-oriented contextually-based productivity",
+  "years_in_business": 1,
+  "locations": [
+    {
+      "location_id": "LOC-1",
+      "address": "81777 Sarah Spur Apt. 566",
+      "city": "Mariashire",
+      "province": "ON",
+      "year_built": 1975,
+      "construction": "Frame",
+      "occupancy": "Warehouse / office",
+      "building_tiv": 2556134,
+      "contents_tiv": 494496,
+      "deductible": 24976
+    }
+  ],
+  "payroll": 590165,
+  "revenue": 9708200,
+  "employees": 152,
+  "prior_carrier": "Lopez, Ramos and Scott",
+  "losses": [
+    {
+      "policy_year": "2022",
+      "claim_date": "2026-05-05",
+      "claim_number": "CLM-50927",
+      "status": "Closed",
+      "paid": 28549,
+      "reserve": 26255,
+      "description": "Dicta laboriosam repellendus recusandae ullam est aut mollitia libero."
+    }
+  ]
+}

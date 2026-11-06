@@ -1,0 +1,38 @@
+{
+  "submission_id": "SUB-2026-0037",
+  "named_insured": "Freeman, Shaw and Hutchinson",
+  "dba": "Inc",
+  "fein": "65-6988091",
+  "effective_date": "2026-12-24",
+  "business_description": "Self-enabling cohesive synergy",
+  "years_in_business": 36,
+  "locations": [
+    {
+      "location_id": "LOC-1",
+      "address": "56144 Jasmine Course Suite 887",
+      "city": "Christineview",
+      "province": "ON",
+      "year_built": 1998,
+      "construction": "Steel",
+      "occupancy": "Warehouse / office",
+      "building_tiv": 3576049,
+      "contents_tiv": 700950,
+      "deductible": 21194
+    }
+  ],
+  "payroll": 3558465,
+  "revenue": 10959146,
+  "employees": 99,
+  "prior_carrier": "Romero Inc",
+  "losses": [
+    {
+      "policy_year": "2023",
+      "claim_date": "2024-11-09",
+      "claim_number": "CLM-73541",
+      "status": "Open",
+      "paid": 62535,
+      "reserve": 50850,
+      "description": "Magnam ea doloribus facere quidem ea magni atque laudantium perferendis."
+    }
+  ]
+}
