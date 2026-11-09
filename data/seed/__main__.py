@@ -11,6 +11,8 @@ import os
 
 import psycopg
 
+from data.seed.generate import CARRIERS, generate
+
 SCHEMA = """
 CREATE EXTENSION IF NOT EXISTS vector;
 CREATE TABLE IF NOT EXISTS clients (
@@ -37,6 +39,23 @@ CREATE TABLE IF NOT EXISTS policy_chunks (
 );
 """
 
+SCHEMA += """
+CREATE TABLE IF NOT EXISTS carriers (carrier_id text PRIMARY KEY, name text NOT NULL);
+CREATE TABLE IF NOT EXISTS producers (producer_id text PRIMARY KEY, name text NOT NULL, email text NOT NULL);
+ALTER TABLE policies ADD COLUMN IF NOT EXISTS carrier_id text REFERENCES carriers;
+ALTER TABLE policies ADD COLUMN IF NOT EXISTS producer_id text REFERENCES producers;
+CREATE TABLE IF NOT EXISTS coverages (
+    policy_id text REFERENCES policies, coverage text NOT NULL,
+    limit_amount numeric(14, 2), deductible numeric(12, 2),
+    PRIMARY KEY (policy_id, coverage)
+);
+CREATE TABLE IF NOT EXISTS claims (
+    claim_id text PRIMARY KEY, policy_id text NOT NULL REFERENCES policies,
+    date_of_loss date NOT NULL, paid numeric(12, 2) NOT NULL DEFAULT 0,
+    status text NOT NULL CHECK (status IN ('open', 'closed')), description text
+);
+"""
+
 CLIENTS = [
     ("C-1042", "Dana Whitfield", "personal"),
     ("C-2001", "Marcus Lee", "personal"),
@@ -56,18 +75,43 @@ POLICIES = [
 def main() -> None:
     p = argparse.ArgumentParser()
     p.add_argument("--small", action="store_true", help="only the rows eval cases rely on")
-    p.parse_args()
+    p.add_argument("--large", action="store_true", help="~400 clients, ~900 policies, ~300 claims")
+    p.add_argument("--reset", action="store_true", help="drop and recreate schema")
+    args = p.parse_args()
     with psycopg.connect(os.environ["DATABASE_URL"]) as conn:
+        if args.reset:
+            conn.execute("DROP SCHEMA public CASCADE")
+            conn.execute("CREATE SCHEMA public")
         conn.execute(SCHEMA)
+        if not (args.small or args.large):
+            print("seeded schema only")
+            return
+        
+        if args.large:
+            # Generate large dataset
+            clients, policies, claims = generate()
+        else:
+            # Use small dataset (no carrier assigned)
+            clients, policies, claims = CLIENTS, [(*p, None) for p in POLICIES], []
+
         conn.cursor().executemany(
-            "INSERT INTO clients VALUES (%s, %s, %s) ON CONFLICT DO NOTHING", CLIENTS
+            "INSERT INTO carriers VALUES (%s, %s) ON CONFLICT DO NOTHING", CARRIERS
+        )
+        conn.cursor().executemany(
+            "INSERT INTO clients VALUES (%s, %s, %s) ON CONFLICT DO NOTHING", clients
         )
         conn.cursor().executemany(
             "INSERT INTO policies (policy_id, client_id, line, product, premium, effective_date,"
-            " renewal_date) VALUES (%s, %s, %s, %s, %s, %s, %s) ON CONFLICT DO NOTHING",
-            POLICIES,
+            " renewal_date, carrier_id) VALUES (%s, %s, %s, %s, %s, %s, %s, %s)"
+            " ON CONFLICT DO NOTHING",
+            policies,
         )
-    print(f"seeded {len(CLIENTS)} clients and {len(POLICIES)} policies")
+        conn.cursor().executemany(
+            "INSERT INTO claims (claim_id, policy_id, date_of_loss, paid, status, description) "
+            "VALUES (%s, %s, %s, %s, %s, %s) ON CONFLICT DO NOTHING",
+            claims,
+        )
+    print(f"seeded {len(clients)} clients and {len(policies)} policies")
 
 
 if __name__ == "__main__":

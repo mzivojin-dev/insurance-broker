@@ -15,7 +15,10 @@ dependencies = [
     "psycopg[binary]>=3.2",
     "faker",
     "jinja2",
-    "xhtml2pdf"
+    "xhtml2pdf",
+    "reportlab>=5.1.0",
+    "pypdf>=6.21.4",
+    "pdf2image>=1.17.0",
 ]
 
 [dependency-groups]
