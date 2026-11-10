@@ -1,5 +1,6 @@
 # Run once by hand with admin credentials (episode 3):
 #   cd infra/bootstrap && terraform init && terraform apply -var github_repo=<owner>/<repo>
+#     [-var github_sub_prefix="$(gh api repos/<owner>/<repo>/actions/oidc/customization/sub --jq .sub_claim_prefix)"]
 # Creates the state bucket, the GitHub OIDC provider and the roles the workflows assume.
 # Copy the outputs into the repo's Actions variables.
 
@@ -24,6 +25,16 @@ variable "github_repo" {
   description = "owner/name of the GitHub repository"
 }
 
+variable "github_sub_prefix" {
+  type        = string
+  default     = ""
+  description = <<-EOT
+    Only for repos whose OIDC tokens use immutable subjects (owner@id/repo@id). Find it with
+      gh api repos/<owner>/<repo>/actions/oidc/customization/sub --jq .sub_claim_prefix
+    e.g. "repo:octo@123/app@456". Empty: accept only the classic "repo:owner/name" subject.
+  EOT
+}
+
 data "aws_caller_identity" "me" {}
 
 resource "aws_s3_bucket" "tf_state" {
@@ -41,12 +52,14 @@ resource "aws_iam_openid_connect_provider" "github" {
 }
 
 locals {
+  # Accept the classic subject and, if set, the immutable one (survives a repo rename or transfer).
+  subs = compact(["repo:${var.github_repo}", var.github_sub_prefix])
   roles = {
-    # role name      = which GitHub refs may assume it
+    # role name      = which GitHub token subjects may assume it
     # No staging role: pre-prod testing runs on the local Docker stack (docker-compose.yml),
     # in CI and on laptops, so the only AWS environment is production.
-    "gha-plan"        = ["repo:${var.github_repo}:pull_request"]
-    "gha-prod-deploy" = ["repo:${var.github_repo}:environment:production"]
+    "gha-plan"        = [for s in local.subs : "${s}:pull_request"]
+    "gha-prod-deploy" = [for s in local.subs : "${s}:environment:production"]
   }
 }
 
