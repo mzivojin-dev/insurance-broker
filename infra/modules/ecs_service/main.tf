@@ -1,7 +1,7 @@
 resource "aws_ecr_repository" "this" {
   name                 = "ai4all/${var.name}"
   image_tag_mutability = "IMMUTABLE"
-  force_delete         = var.ephemeral   # destroy even with images in it
+  force_delete         = var.ephemeral # destroy even with images in it
   image_scanning_configuration { scan_on_push = true }
 }
 
@@ -21,7 +21,7 @@ resource "aws_ecs_task_definition" "this" {
     secrets      = [for k, arn in var.secrets : { name = k, valueFrom = arn }]
     logConfiguration = {
       logDriver = "awslogs"
-      options = { awslogs-group = "/ai4all/${var.env}/${var.name}", awslogs-region = var.region, awslogs-stream-prefix = "app" }
+      options   = { awslogs-group = "/ai4all/${var.env}/${var.name}", awslogs-region = var.region, awslogs-stream-prefix = "app" }
     }
     healthCheck = { command = ["CMD-SHELL", "python -c \"import urllib.request;urllib.request.urlopen('http://localhost:8080/health')\""] }
   }])

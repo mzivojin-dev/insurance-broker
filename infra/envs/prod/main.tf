@@ -73,7 +73,7 @@ module "services" {
   listener_arn = aws_lb_listener.https.arn
   # No DATABASE_URL secret: libpq fills an empty URL from PG* variables, and ECS injects the
   # user and password straight from the RDS-managed secret's JSON keys. Same code as locally.
-  environment  = { DATABASE_URL = "postgresql://", PGHOST = module.db.address, PGDATABASE = "ai4all", PGSSLMODE = "require" }
+  environment = { DATABASE_URL = "postgresql://", PGHOST = module.db.address, PGDATABASE = "ai4all", PGSSLMODE = "require" }
   secrets = {
     ANTHROPIC_API_KEY = aws_secretsmanager_secret.anthropic.arn
     PGUSER            = "${module.db.master_secret_arn}:username::"

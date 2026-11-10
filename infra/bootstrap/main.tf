@@ -88,6 +88,26 @@ resource "aws_iam_role_policy_attachment" "deploy" {
   policy_arn = "arn:aws:iam::aws:policy/PowerUserAccess"
 }
 
+# PowerUserAccess excludes IAM, but the stack creates its own roles (ECS execution/task roles,
+# Textract). Allow IAM only on roles named ai4all-*, plus passing them to ECS.
+data "aws_iam_policy_document" "deploy_iam" {
+  statement {
+    actions = [
+      "iam:CreateRole", "iam:DeleteRole", "iam:GetRole", "iam:UpdateRole", "iam:TagRole", "iam:UntagRole",
+      "iam:UpdateAssumeRolePolicy", "iam:ListRolePolicies", "iam:ListAttachedRolePolicies",
+      "iam:ListInstanceProfilesForRole", "iam:PutRolePolicy", "iam:GetRolePolicy", "iam:DeleteRolePolicy",
+      "iam:AttachRolePolicy", "iam:DetachRolePolicy", "iam:PassRole",
+    ]
+    resources = ["arn:aws:iam::*:role/ai4all-*"] # service-linked roles are already in PowerUserAccess
+  }
+}
+
+resource "aws_iam_role_policy" "deploy_iam" {
+  name   = "ai4all-roles"
+  role   = aws_iam_role.gha["gha-prod-deploy"].name
+  policy = data.aws_iam_policy_document.deploy_iam.json
+}
+
 output "AWS_PLAN_ROLE_ARN" { value = aws_iam_role.gha["gha-plan"].arn }
 output "AWS_PROD_DEPLOY_ROLE_ARN" { value = aws_iam_role.gha["gha-prod-deploy"].arn }
 output "TF_STATE_BUCKET" { value = aws_s3_bucket.tf_state.bucket }

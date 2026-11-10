@@ -29,7 +29,7 @@ evals/baselines/         committed scores the PR gate compares against
 data/seed/               synthetic agency data
 docker-compose.yml       local stack (db, seed, 3 agents, gateway): the pre-prod environment
 infra/                   Terraform: bootstrap (OIDC roles), modules, envs/prod
-.github/workflows/       pr.yml (gate), deploy.yml (full evals on the local stack, then prod), nightly-evals.yml
+.github/workflows/       pr.yml (unit, eval gate, terraform plan), deploy.yml (local stack, approve, apply prod); nightly-evals.yml in EP12
 docs/incident-log.md     everything that broke, for episode 14
 ```
 
@@ -77,10 +77,13 @@ With `make` available, `make eval AGENT=client_service TAG=escalation` and frien
 2. Add the `ANTHROPIC_API_KEY` repository secret.
 3. Apply `infra/bootstrap` once with admin credentials, then set the repository variables
    `AWS_REGION`, `AWS_PLAN_ROLE_ARN`, `AWS_PROD_DEPLOY_ROLE_ARN`.
-   Deploy jobs skip until `AWS_PROD_DEPLOY_ROLE_ARN` is set.
+   The plan job skips until `AWS_PLAN_ROLE_ARN` is set, the deploy job until `AWS_PROD_DEPLOY_ROLE_ARN` is.
+   `pr.yml` posts `terraform plan` for `infra/envs/prod` on any `infra/**` change; `deploy.yml`
+   builds the images (tag = git sha), pushes them to ECR and runs `terraform apply`.
 4. Create a `production` environment and add yourself as required reviewer. There is no staging
-   environment: `deploy.yml` runs the full eval suite against `docker compose up` on the runner,
-   then waits for approval and deploys to prod.
+   environment: `deploy.yml` brings up `docker compose` on the runner and smoke-checks it (EP13
+   adds the full eval suite there), then waits for approval and deploys to prod. Prod is
+   ephemeral, so on days you aren't recording, reject the pending approval.
 
 ## Prod is ephemeral
 
