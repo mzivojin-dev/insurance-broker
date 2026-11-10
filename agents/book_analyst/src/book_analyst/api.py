@@ -4,9 +4,11 @@ from typing import Any
 
 from fastapi import FastAPI
 
+from agent_core.http import StripPrefix
 from book_analyst.agent import run
 
 app = FastAPI(title="book_analyst")
+app.add_middleware(StripPrefix, prefix="book_analyst")  # the prod ALB keeps the path prefix
 
 
 @app.get("/health")

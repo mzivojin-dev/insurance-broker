@@ -13,7 +13,8 @@ cd "$(dirname "$0")/../infra/envs/prod"
 approve=()
 [[ "${1:-}" == "--yes" ]] && approve=(-auto-approve)
 
-terraform init -input=false >/dev/null
+bucket="${TF_STATE_BUCKET:-ai4all-tf-state-$(aws sts get-caller-identity --query Account --output text | tr -d '\r')}"
+terraform init -input=false -backend-config="bucket=$bucket" >/dev/null
 terraform destroy -input=false "${approve[@]}"
 
 echo

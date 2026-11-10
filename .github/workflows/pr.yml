@@ -1,0 +1,100 @@
+# PR gate. Required checks on main: unit, eval-gate.
+# terraform-plan runs only when infra/** changes and posts the prod plan as a PR comment.
+name: pr
+
+on:
+  pull_request:
+
+permissions:
+  contents: read
+  pull-requests: write   # plan and eval comments
+  id-token: write        # GitHub OIDC -> AWS_PLAN_ROLE_ARN
+
+concurrency:
+  group: pr-${{ github.event.pull_request.number }}
+  cancel-in-progress: true
+
+jobs:
+  changes:
+    runs-on: ubuntu-latest
+    outputs:
+      infra: ${{ steps.filter.outputs.infra }}
+    steps:
+      - uses: actions/checkout@v4
+      - id: filter
+        uses: dorny/paths-filter@v3
+        with:
+          filters: |
+            infra:
+              - 'infra/**'
+              - '.github/workflows/pr.yml'
+
+  unit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v6
+        with: { python-version: "3.12" }
+      - run: uv sync --frozen
+      - run: uv run pytest -q   # unit tests, no model calls
+
+  eval-gate:
+    # Placeholder so the required check exists from day one.
+    # EP12 replaces this with smoke evals per agent + evals.harness.report --gate against evals/baselines.
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "eval gate arrives in EP12"
+
+  terraform-plan:
+    needs: changes
+    if: needs.changes.outputs.infra == 'true' && vars.AWS_PLAN_ROLE_ARN != ''
+    runs-on: ubuntu-latest
+    defaults:
+      run: { working-directory: infra/envs/prod }
+    steps:
+      - uses: actions/checkout@v4
+      - uses: aws-actions/configure-aws-credentials@v4
+        with:
+          role-to-assume: ${{ vars.AWS_PLAN_ROLE_ARN }}
+          aws-region: ${{ vars.AWS_REGION }}
+      - uses: hashicorp/setup-terraform@v3
+        with: { terraform_wrapper: false }
+
+      - name: fmt
+        run: terraform fmt -check -recursive ../..
+      - name: init
+        # state bucket name has the account ID in it, so it isn't committed
+        run: |
+          terraform init -input=false \
+            -backend-config="bucket=ai4all-tf-state-$(aws sts get-caller-identity --query Account --output text)"
+      - name: validate
+        run: terraform validate -no-color
+      - name: plan
+        id: plan
+        # gha-plan is ReadOnlyAccess: it can read the state but not write the lock file, hence -lock=false.
+        # image_tag = the PR head so the task definition diff shows what this PR would ship.
+        run: |
+          set -o pipefail
+          terraform plan -input=false -no-color -lock=false \
+            -var "image_tag=${{ github.event.pull_request.head.sha }}" 2>&1 | tee plan.txt
+
+      - name: comment
+        if: always() && steps.plan.outcome != 'skipped'
+        run: |
+          {
+            echo "### terraform plan: infra/envs/prod (${{ steps.plan.outcome }})"
+            echo
+            grep -E '^(Plan:|No changes\.|Error:)' plan.txt || true
+            echo
+            echo '<details><summary>full plan</summary>'
+            echo
+            echo '```'
+            head -c 60000 plan.txt   # PR comments max out at 65536 chars
+            echo '```'
+            echo '</details>'
+          } > plan.md
+      - uses: marocchino/sticky-pull-request-comment@v2
+        if: always() && steps.plan.outcome != 'skipped'
+        with:
+          header: terraform-plan
+          path: infra/envs/prod/plan.md

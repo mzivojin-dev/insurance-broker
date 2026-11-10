@@ -1,0 +1,96 @@
+# Merge to main (or publish a release, or run by hand) -> test on the local stack -> approve -> apply prod.
+# Prod is ephemeral: if you are not recording today, leave the approval pending or reject it.
+name: deploy
+
+on:
+  push:
+    branches: [main]
+  release:
+    types: [published]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  id-token: write   # GitHub OIDC -> AWS_PROD_DEPLOY_ROLE_ARN
+
+concurrency:
+  group: deploy-prod
+  cancel-in-progress: false   # never interrupt a terraform apply
+
+env:
+  AGENTS: client_service submission_intake book_analyst
+
+jobs:
+  local-stack:
+    # The pre-prod environment: same Dockerfiles as prod, on the runner.
+    # EP13 adds the full eval suite here (--target http://localhost:8080/<agent>).
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: .env for compose
+        run: echo "ANTHROPIC_API_KEY=${{ secrets.ANTHROPIC_API_KEY }}" > .env
+      - name: compose up
+        # returns once the gateway starts, i.e. after seed finished and all agents are healthy
+        run: docker compose up -d --build
+      - run: scripts/smoke_check.sh http://localhost:8080
+      - name: logs on failure
+        if: failure()
+        run: docker compose logs --no-color --tail 200
+      - if: always()
+        run: docker compose down -v
+
+  deploy:
+    needs: local-stack
+    if: vars.AWS_PROD_DEPLOY_ROLE_ARN != ''
+    runs-on: ubuntu-latest
+    environment: production   # required reviewer approves here
+    defaults:
+      run: { working-directory: infra/envs/prod }
+    steps:
+      - uses: actions/checkout@v4
+      - uses: aws-actions/configure-aws-credentials@v4
+        with:
+          role-to-assume: ${{ vars.AWS_PROD_DEPLOY_ROLE_ARN }}
+          aws-region: ${{ vars.AWS_REGION }}
+      - uses: hashicorp/setup-terraform@v3
+        with: { terraform_wrapper: false }
+      - name: init
+        run: |
+          terraform init -input=false \
+            -backend-config="bucket=ai4all-tf-state-$(aws sts get-caller-identity --query Account --output text)"
+
+      - name: ECR repositories and the API key secret first
+        # Prod is destroyed daily, so these may not exist yet. Create only them, push images and
+        # the key, then apply everything so the tasks start with both already in place.
+        run: |
+          targets=(-target=aws_secretsmanager_secret.anthropic)
+          for a in $AGENTS; do targets+=(-target="module.services[\"$a\"].aws_ecr_repository.this"); done
+          terraform apply -input=false -auto-approve "${targets[@]}"
+
+      - name: write the Anthropic API key (kept out of the Terraform state)
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: |
+          aws secretsmanager put-secret-value --secret-id ai4all-prod/anthropic-api-key \
+            --secret-string "$ANTHROPIC_API_KEY" >/dev/null
+
+      - id: ecr
+        uses: aws-actions/amazon-ecr-login@v2
+      - name: build and push images (tag = git sha)
+        working-directory: .
+        run: |
+          for a in $AGENTS; do
+            repo="${{ steps.ecr.outputs.registry }}/ai4all/$a"
+            # tags are IMMUTABLE: a rerun of the same commit reuses the image
+            if aws ecr describe-images --repository-name "ai4all/$a" --image-ids imageTag="$GITHUB_SHA" >/dev/null 2>&1; then
+              echo "$a:$GITHUB_SHA already pushed"; continue
+            fi
+            docker build -f "agents/$a/Dockerfile" -t "$repo:$GITHUB_SHA" .
+            docker push "$repo:$GITHUB_SHA"
+          done
+
+      - name: apply
+        run: terraform apply -input=false -auto-approve -var "image_tag=$GITHUB_SHA"
+
+      - name: smoke check prod
+        run: ../../../scripts/smoke_check.sh "$(terraform output -raw base_url)"
