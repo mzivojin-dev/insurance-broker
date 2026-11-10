@@ -92,5 +92,9 @@ jobs:
       - name: apply
         run: terraform apply -input=false -auto-approve -var "image_tag=$GITHUB_SHA"
 
+      - name: wait for healthy tasks
+        # apply returns once the services exist; new tasks need 1-2 minutes to pass ALB health checks
+        run: aws ecs wait services-stable --cluster ai4all-prod --services $AGENTS
+
       - name: smoke check prod
         run: ../../../scripts/smoke_check.sh "$(terraform output -raw base_url)"
