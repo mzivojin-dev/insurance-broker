@@ -54,15 +54,25 @@ jobs:
           aws-region: ${{ vars.AWS_REGION }}
       - uses: hashicorp/setup-terraform@v3
         with: { terraform_wrapper: false }
-      - run: terraform init -input=false
-
-      - name: ECR repositories first
-        # Prod is destroyed daily, so the repos may not exist yet. Create only them, push images,
-        # then apply everything so the ECS services start on images that are already there.
+      - name: init
         run: |
-          targets=()
+          terraform init -input=false \
+            -backend-config="bucket=ai4all-tf-state-$(aws sts get-caller-identity --query Account --output text)"
+
+      - name: ECR repositories and the API key secret first
+        # Prod is destroyed daily, so these may not exist yet. Create only them, push images and
+        # the key, then apply everything so the tasks start with both already in place.
+        run: |
+          targets=(-target=aws_secretsmanager_secret.anthropic)
           for a in $AGENTS; do targets+=(-target="module.services[\"$a\"].aws_ecr_repository.this"); done
           terraform apply -input=false -auto-approve "${targets[@]}"
+
+      - name: write the Anthropic API key (kept out of the Terraform state)
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: |
+          aws secretsmanager put-secret-value --secret-id ai4all-prod/anthropic-api-key \
+            --secret-string "$ANTHROPIC_API_KEY" >/dev/null
 
       - id: ecr
         uses: aws-actions/amazon-ecr-login@v2
@@ -83,10 +93,4 @@ jobs:
         run: terraform apply -input=false -auto-approve -var "image_tag=$GITHUB_SHA"
 
       - name: smoke check prod
-        # needs output "base_url" in infra/envs/prod (the ALB address); skipped until it exists
-        run: |
-          if url=$(terraform output -raw base_url 2>/dev/null); then
-            ../../../scripts/smoke_check.sh "$url"
-          else
-            echo "no base_url output yet; skipping prod smoke check"
-          fi
+        run: ../../../scripts/smoke_check.sh "$(terraform output -raw base_url)"

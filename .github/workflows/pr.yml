@@ -63,7 +63,10 @@ jobs:
       - name: fmt
         run: terraform fmt -check -recursive ../..
       - name: init
-        run: terraform init -input=false
+        # state bucket name has the account ID in it, so it isn't committed
+        run: |
+          terraform init -input=false \
+            -backend-config="bucket=ai4all-tf-state-$(aws sts get-caller-identity --query Account --output text)"
       - name: validate
         run: terraform validate -no-color
       - name: plan

@@ -1,1 +1,2 @@
-# Module inputs (episode 3)
+variable "env" { type = string }
+variable "region" { type = string }
