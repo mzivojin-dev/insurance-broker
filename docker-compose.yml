@@ -20,13 +20,13 @@ x-agent: &agent
 
 services:
   db:
-    image: pgvector/pgvector:pg16
+    image: pgvector/pgvector:pg18   # same major as RDS (engine_version = "18")
     environment:
       POSTGRES_USER: ai4all
       POSTGRES_PASSWORD: ai4all
       POSTGRES_DB: ai4all
     ports: ["${DB_PORT:-5432}:5432"]
-    volumes: [pgdata:/var/lib/postgresql/data]
+    volumes: [pgdata:/var/lib/postgresql]   # 18+ images keep data in /var/lib/postgresql/18/docker
     healthcheck:
       test: ["CMD-SHELL", "pg_isready -U ai4all -d ai4all"]
       interval: 5s
