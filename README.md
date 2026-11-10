@@ -27,8 +27,9 @@ evals/harness/           case loader, graders, runner, report + baseline gate
 evals/datasets/<agent>/  YAML eval cases (the spec) and fixtures
 evals/baselines/         committed scores the PR gate compares against
 data/seed/               synthetic agency data
-infra/                   Terraform: bootstrap (OIDC roles), modules, envs/staging, envs/prod
-.github/workflows/       pr.yml (gate), deploy.yml (staging, full evals, prod), nightly-evals.yml
+docker-compose.yml       local stack (db, seed, 3 agents, gateway): the pre-prod environment
+infra/                   Terraform: bootstrap (OIDC roles), modules, envs/prod
+.github/workflows/       pr.yml (gate), deploy.yml (full evals on the local stack, then prod), nightly-evals.yml
 docs/incident-log.md     everything that broke, for episode 14
 ```
 
@@ -41,9 +42,8 @@ uv sync --all-packages                     # install everything
 uv run pytest -q                           # unit tests, no model calls
 cp .env.example .env                       # add ANTHROPIC_API_KEY
 
-# local Postgres with pgvector for evals
-docker run -d --name ai4all-db -e POSTGRES_USER=ai4all -e POSTGRES_PASSWORD=ai4all -e POSTGRES_DB=ai4all -p 5432:5432 pgvector/pgvector:pg16
-uv run python -m data.seed --small
+# local Postgres with pgvector, seeded with --small (the full stack below also starts it)
+docker compose up -d db seed
 
 # run the smoke evals for one agent, then gate against the baseline
 uv run python -m evals.harness.run --agent client_service --tag smoke
@@ -53,6 +53,21 @@ uv run python -m evals.harness.report --results results/client_service.json --ba
 uv run python -m pytest evals --agent client_service --tag escalation -v
 ```
 
+## Local stack (no staging environment)
+
+There is no cloud staging. Pre-prod testing runs the real agent images on Docker, on your
+machine and in CI, with the same `/<agent>/...` paths as the prod load balancer:
+
+```bash
+docker compose up -d --build                         # db + seed + 3 agents + gateway on :8080
+scripts/smoke_check.sh http://localhost:8080         # every agent answers /health
+uv run python -m evals.harness.run --agent client_service --target http://localhost:8080/client_service
+SEED_ARGS=--large docker compose run --rm seed       # reseed with the large synthetic book
+docker compose down                                  # add -v to drop the database volume
+```
+
+Ports: `DB_PORT` (default 5432) and `GATEWAY_PORT` (default 8080).
+
 On PowerShell, set env vars with `$env:DATABASE_URL = "postgresql://ai4all:ai4all@localhost:5432/ai4all"`.
 With `make` available, `make eval AGENT=client_service TAG=escalation` and friends wrap these.
 
@@ -61,6 +76,8 @@ With `make` available, `make eval AGENT=client_service TAG=escalation` and frien
 1. Push to GitHub and protect `main`: require the `unit` and `eval-gate` checks.
 2. Add the `ANTHROPIC_API_KEY` repository secret.
 3. Apply `infra/bootstrap` once with admin credentials, then set the repository variables
-   `AWS_REGION`, `AWS_PLAN_ROLE_ARN`, `AWS_DEPLOY_ROLE_ARN`, `AWS_PROD_DEPLOY_ROLE_ARN`.
-   Deploy jobs skip until `AWS_DEPLOY_ROLE_ARN` is set.
-4. Create `staging` and `production` environments; add yourself as required reviewer on production.
+   `AWS_REGION`, `AWS_PLAN_ROLE_ARN`, `AWS_PROD_DEPLOY_ROLE_ARN`.
+   Deploy jobs skip until `AWS_PROD_DEPLOY_ROLE_ARN` is set.
+4. Create a `production` environment and add yourself as required reviewer. There is no staging
+   environment: `deploy.yml` runs the full eval suite against `docker compose up` on the runner,
+   then waits for approval and deploys to prod.

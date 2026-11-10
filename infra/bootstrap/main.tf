@@ -43,8 +43,9 @@ resource "aws_iam_openid_connect_provider" "github" {
 locals {
   roles = {
     # role name      = which GitHub refs may assume it
+    # No staging role: pre-prod testing runs on the local Docker stack (docker-compose.yml),
+    # in CI and on laptops, so the only AWS environment is production.
     "gha-plan"        = ["repo:${var.github_repo}:pull_request"]
-    "gha-deploy"      = ["repo:${var.github_repo}:environment:staging", "repo:${var.github_repo}:ref:refs/heads/main"]
     "gha-prod-deploy" = ["repo:${var.github_repo}:environment:production"]
   }
 }
@@ -83,12 +84,10 @@ resource "aws_iam_role_policy_attachment" "plan_read_only" {
 
 # TODO (episode 3): replace PowerUserAccess with least-privilege policies once the stack settles.
 resource "aws_iam_role_policy_attachment" "deploy" {
-  for_each   = toset(["gha-deploy", "gha-prod-deploy"])
-  role       = aws_iam_role.gha[each.key].name
+  role       = aws_iam_role.gha["gha-prod-deploy"].name
   policy_arn = "arn:aws:iam::aws:policy/PowerUserAccess"
 }
 
 output "AWS_PLAN_ROLE_ARN" { value = aws_iam_role.gha["gha-plan"].arn }
-output "AWS_DEPLOY_ROLE_ARN" { value = aws_iam_role.gha["gha-deploy"].arn }
 output "AWS_PROD_DEPLOY_ROLE_ARN" { value = aws_iam_role.gha["gha-prod-deploy"].arn }
 output "TF_STATE_BUCKET" { value = aws_s3_bucket.tf_state.bucket }

@@ -10,3 +10,4 @@ results/
 *.tfstate
 *.tfstate.*
 .terraform.lock.hcl
+data/docs/out/

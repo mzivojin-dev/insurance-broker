@@ -1,7 +1,7 @@
 """Run eval cases against an agent, in process or over HTTP, and write a results file.
 
     uv run python -m evals.harness.run --agent client_service --tag smoke --out results/cs.json
-    uv run python -m evals.harness.run --agent client_service --target https://staging.example.com/client_service
+    uv run python -m evals.harness.run --agent client_service --target http://localhost:8080/client_service
 
 Case failures do not fail this command; `evals.harness.report --gate` decides that.
 """

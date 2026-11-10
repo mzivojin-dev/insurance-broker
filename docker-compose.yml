@@ -1,0 +1,78 @@
+# Local stack: replaces a cloud staging environment.
+#   docker compose up -d --build            # db + seed (--small) + 3 agents + gateway
+#   SEED_ARGS=--large docker compose up -d  # bigger synthetic book
+#   scripts/smoke_check.sh http://localhost:8080
+#   uv run python -m evals.harness.run --agent client_service --target http://localhost:8080/client_service
+# Needs ANTHROPIC_API_KEY in .env. Gateway paths mirror the prod load balancer: /<agent>/health, /<agent>/run.
+
+x-agent: &agent
+  env_file: .env
+  environment:
+    DATABASE_URL: postgresql://ai4all:ai4all@db:5432/ai4all
+  depends_on:
+    seed: { condition: service_completed_successfully }
+  restart: unless-stopped
+  healthcheck:
+    test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://localhost:8080/health')"]
+    interval: 10s
+    timeout: 3s
+    retries: 5
+
+services:
+  db:
+    image: pgvector/pgvector:pg16
+    environment:
+      POSTGRES_USER: ai4all
+      POSTGRES_PASSWORD: ai4all
+      POSTGRES_DB: ai4all
+    ports: ["${DB_PORT:-5432}:5432"]
+    volumes: [pgdata:/var/lib/postgresql/data]
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ai4all -d ai4all"]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+
+  seed:
+    build: { context: ., dockerfile: data/seed/Dockerfile }
+    command: ${SEED_ARGS:---small}
+    environment:
+      DATABASE_URL: postgresql://ai4all:ai4all@db:5432/ai4all
+    volumes: ["./data/docs/out:/app/data/docs/out"]
+    depends_on:
+      db: { condition: service_healthy }
+
+  client_service:
+    <<: *agent
+    build: { context: ., dockerfile: agents/client_service/Dockerfile }
+
+  submission_intake:
+    <<: *agent
+    build: { context: ., dockerfile: agents/submission_intake/Dockerfile }
+
+  book_analyst:
+    <<: *agent
+    build: { context: ., dockerfile: agents/book_analyst/Dockerfile }
+
+  gateway:
+    image: nginx:1.27-alpine
+    ports: ["${GATEWAY_PORT:-8080}:80"]
+    configs: [{ source: gateway, target: /etc/nginx/conf.d/default.conf }]
+    depends_on:
+      client_service: { condition: service_healthy }
+      submission_intake: { condition: service_healthy }
+      book_analyst: { condition: service_healthy }
+
+configs:
+  gateway:
+    content: |
+      server {
+        listen 80;
+        proxy_read_timeout 300s;
+        location /client_service/    { proxy_pass http://client_service:8080/; }
+        location /submission_intake/ { proxy_pass http://submission_intake:8080/; }
+        location /book_analyst/      { proxy_pass http://book_analyst:8080/; }
+      }
+
+volumes:
+  pgdata:
