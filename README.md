@@ -81,3 +81,15 @@ With `make` available, `make eval AGENT=client_service TAG=escalation` and frien
 4. Create a `production` environment and add yourself as required reviewer. There is no staging
    environment: `deploy.yml` runs the full eval suite against `docker compose up` on the runner,
    then waits for approval and deploys to prod.
+
+## Prod is ephemeral
+
+Prod runs only while recording or chasing a prod-only issue. At the end of the day:
+
+```bash
+scripts/prod_down.sh          # terraform destroy of infra/envs/prod, then lists anything still tagged
+```
+
+`var.ephemeral` (default `true`) turns off RDS deletion protection and the final snapshot and
+empties S3/ECR on destroy, so the teardown never gets stuck. `infra/bootstrap` (state bucket, OIDC
+roles) stays; it costs nothing. Next session: tag a release (or rerun `deploy.yml`) and reseed.

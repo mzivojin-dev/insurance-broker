@@ -26,13 +26,23 @@ variable "image_tag" {
   default     = "latest"
 }
 
+variable "ephemeral" {
+  type        = bool
+  description = <<-EOT
+    true: prod is torn down every day (scripts/prod_down.sh), so RDS has no deletion
+    protection or final snapshot and S3/ECR are emptied on destroy. Set false if prod
+    ever runs full time with real data.
+  EOT
+  default     = true
+}
+
 locals {
   agents = ["client_service", "submission_intake", "book_analyst"]
 }
 
-# TODO (episode 3): wire up the modules
+# TODO (episode 3): wire up the modules; pass var.ephemeral to db and services
 # module "vpc"      { source = "../../modules/vpc" }
-# module "db"       { source = "../../modules/rds_pgvector" ... }
+# module "db"       { source = "../../modules/rds_pgvector", ephemeral = var.ephemeral ... }
 # module "services" {
 #   source    = "../../modules/ecs_service"
 #   for_each  = toset(local.agents)
