@@ -1,8 +1,9 @@
-"""Run one agent turn end to end and send the trace to Langfuse.
+"""Run one agent turn end to end and send the trace to the configured tracing backend.
 
     uv run --env-file .env python -m agent_core.demo ["your question"]
 
-Tracing uses LANGFUSE_PUBLIC_KEY, LANGFUSE_SECRET_KEY and LANGFUSE_BASE_URL from the env file.
+Set TRACING_BACKEND=phoenix (local Phoenix on :6006) or langfuse in the env file;
+see agent_core.tracing for the other settings.
 """
 
 import json
