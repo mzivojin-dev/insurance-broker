@@ -3,14 +3,20 @@
 #   SEED_ARGS=--large docker compose up -d  # bigger synthetic book
 #   scripts/smoke_check.sh http://localhost:8080
 #   uv run python -m evals.harness.run --agent client_service --target http://localhost:8080/client_service
+#   docker compose up -d phoenix            # just the trace UI, for agents run on the host
 # Needs ANTHROPIC_API_KEY in .env. Gateway paths mirror the prod load balancer: /<agent>/health, /<agent>/run.
+# Traces: Phoenix UI on http://localhost:6006. Host processes reach it there too (the default
+# PHOENIX_COLLECTOR_ENDPOINT), with TRACING_BACKEND=phoenix in .env.
 
 x-agent: &agent
   env_file: .env
   environment:
     DATABASE_URL: postgresql://ai4all:ai4all@db:5432/ai4all
+    TRACING_BACKEND: phoenix
+    PHOENIX_COLLECTOR_ENDPOINT: http://phoenix:6006
   depends_on:
     seed: { condition: service_completed_successfully }
+    phoenix: { condition: service_started }   # tracing is best effort; don't wait for health
   restart: unless-stopped
   healthcheck:
     test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://localhost:8080/health')"]
@@ -41,6 +47,15 @@ services:
     volumes: ["./data/docs/out:/app/data/docs/out"]
     depends_on:
       db: { condition: service_healthy }
+
+  phoenix:
+    image: arizephoenix/phoenix:version-21.0.0   # keep in step with phoenix_image in infra/envs/prod
+    environment:
+      PHOENIX_WORKING_DIR: /mnt/data             # SQLite trace store, kept in the volume
+    ports:
+      - "${PHOENIX_PORT:-6006}:6006"             # UI and OTLP over HTTP (/v1/traces)
+    volumes: [phoenix_data:/mnt/data]
+    restart: unless-stopped
 
   client_service:
     <<: *agent
@@ -76,3 +91,4 @@ configs:
 
 volumes:
   pgdata:
+  phoenix_data:

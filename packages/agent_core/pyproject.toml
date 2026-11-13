@@ -2,7 +2,12 @@
 name = "agent-core"
 version = "0.1.0"
 requires-python = ">=3.12"
-dependencies = ["anthropic>=0.40"]
+dependencies = [
+    "anthropic>=0.40",
+    "arize-phoenix-otel>=0.17.3",
+    "langfuse>=5.2.0",
+    "openinference-semantic-conventions>=0.1.44",
+]
 
 [build-system]
 requires = ["hatchling"]
