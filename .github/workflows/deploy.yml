@@ -59,11 +59,11 @@ jobs:
           terraform init -input=false \
             -backend-config="bucket=ai4all-tf-state-$(aws sts get-caller-identity --query Account --output text)"
 
-      - name: ECR repositories and the API key secret first
+      - name: ECR repositories and the secrets first
         # Prod is destroyed daily, so these may not exist yet. Create only them, push images and
         # the key, then apply everything so the tasks start with both already in place.
         run: |
-          targets=(-target=aws_secretsmanager_secret.anthropic)
+          targets=(-target=aws_secretsmanager_secret.anthropic -target=aws_secretsmanager_secret.phoenix)
           for a in $AGENTS; do targets+=(-target="module.services[\"$a\"].aws_ecr_repository.this"); done
           terraform apply -input=false -auto-approve "${targets[@]}"
 
@@ -73,6 +73,20 @@ jobs:
         run: |
           aws secretsmanager put-secret-value --secret-id ai4all-prod/anthropic-api-key \
             --secret-string "$ANTHROPIC_API_KEY" >/dev/null
+
+      - name: generate the Phoenix keys (first deploy of the day only)
+        # Rotating them on every deploy would leave a running Phoenix task with the old
+        # admin_secret while new agent tasks send the new one.
+        run: |
+          if aws secretsmanager get-secret-value --secret-id ai4all-prod/phoenix >/dev/null 2>&1; then
+            echo "Phoenix keys already set"; exit 0
+          fi
+          # Phoenix wants 32+ characters with a digit and a lowercase letter; the suffix guarantees both
+          jq -n --arg s "$(openssl rand -hex 24)a1" --arg a "$(openssl rand -hex 24)b2" \
+                --arg p "$(openssl rand -base64 24 | tr -d '/+=')" \
+                '{secret: $s, admin_secret: $a, admin_password: $p}' |
+            aws secretsmanager put-secret-value --secret-id ai4all-prod/phoenix \
+              --secret-string file:///dev/stdin >/dev/null
 
       - id: ecr
         uses: aws-actions/amazon-ecr-login@v2
@@ -94,7 +108,9 @@ jobs:
 
       - name: wait for healthy tasks
         # apply returns once the services exist; new tasks need 1-2 minutes to pass ALB health checks
-        run: aws ecs wait services-stable --cluster ai4all-prod --services $AGENTS
+        run: aws ecs wait services-stable --cluster ai4all-prod --services $AGENTS phoenix
 
       - name: smoke check prod
-        run: ../../../scripts/smoke_check.sh "$(terraform output -raw base_url)"
+        run: |
+          ../../../scripts/smoke_check.sh "$(terraform output -raw base_url)"
+          curl -fsS "$(terraform output -raw phoenix_url)healthz" && echo " <- Phoenix"

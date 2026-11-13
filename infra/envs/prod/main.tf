@@ -65,6 +65,13 @@ resource "aws_secretsmanager_secret" "anthropic" {
   recovery_window_in_days = var.ephemeral ? 0 : 30 # 0: the name is free again for tomorrow's apply
 }
 
+# Phoenix keys, JSON {secret, admin_secret, admin_password}. Like the API key, deploy.yml writes
+# the value (only when the secret is new), so it stays out of the state.
+resource "aws_secretsmanager_secret" "phoenix" {
+  name                    = "ai4all-prod/phoenix"
+  recovery_window_in_days = var.ephemeral ? 0 : 30
+}
+
 resource "aws_security_group" "alb" {
   name   = "ai4all-prod-alb"
   vpc_id = module.vpc.vpc_id
@@ -109,6 +116,11 @@ output "base_url" {
   description = "scripts/smoke_check.sh target; deploy.yml smoke-checks it after apply"
   value       = "${local.https ? "https" : "http"}://${aws_lb.this.dns_name}"
 }
+
+output "phoenix_url" {
+  description = "trace UI; log in as admin@localhost with admin_password from ai4all-prod/phoenix"
+  value       = "${local.https ? "https" : "http"}://${aws_lb.this.dns_name}${module.phoenix.root_path}/"
+}
 resource "aws_s3_bucket" "docs" {
   bucket        = "ai4all-prod-docs-${data.aws_caller_identity.me.account_id}"
   force_destroy = var.ephemeral
@@ -131,6 +143,20 @@ module "db" {
   allowed_security_group_ids = [aws_security_group.app.id]
 }
 
+module "phoenix" {
+  source       = "../../modules/phoenix"
+  env          = "prod"
+  ephemeral    = var.ephemeral
+  cluster_arn  = aws_ecs_cluster.this.arn
+  vpc_id       = module.vpc.vpc_id
+  subnet_ids   = module.vpc.private_subnet_ids
+  listener_arn = aws_lb_listener.this.arn
+  secret_arn   = aws_secretsmanager_secret.phoenix.arn
+
+  alb_security_group_id     = aws_security_group.alb.id
+  client_security_group_ids = [aws_security_group.app.id]
+}
+
 module "services" {
   source       = "../../modules/ecs_service"
   for_each     = toset(local.agents)
@@ -147,10 +173,18 @@ module "services" {
   extra_security_group_ids = [aws_security_group.app.id]
   # No DATABASE_URL secret: libpq fills an empty URL from PG* variables, and ECS injects the
   # user and password straight from the RDS-managed secret's JSON keys. Same code as locally.
-  environment = { DATABASE_URL = "postgresql://", PGHOST = module.db.address, PGDATABASE = "ai4all", PGSSLMODE = "require" }
+  environment = {
+    DATABASE_URL               = "postgresql://"
+    PGHOST                     = module.db.address
+    PGDATABASE                 = "ai4all"
+    PGSSLMODE                  = "require"
+    TRACING_BACKEND            = "phoenix"
+    PHOENIX_COLLECTOR_ENDPOINT = module.phoenix.collector_endpoint
+  }
   secrets = {
     ANTHROPIC_API_KEY = aws_secretsmanager_secret.anthropic.arn
     PGUSER            = "${module.db.master_secret_arn}:username::"
     PGPASSWORD        = "${module.db.master_secret_arn}:password::"
+    PHOENIX_API_KEY   = "${aws_secretsmanager_secret.phoenix.arn}:admin_secret::" # bearer token for ingest
   }
 }
