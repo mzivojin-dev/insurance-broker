@@ -52,6 +52,7 @@ services:
     image: arizephoenix/phoenix:version-21.0.0   # keep in step with phoenix_image in infra/envs/prod
     environment:
       PHOENIX_WORKING_DIR: /mnt/data             # SQLite trace store, kept in the volume
+      PHOENIX_ENABLE_AUTH: "false"               # on by default since v21; local only, prod turns it on
     ports:
       - "${PHOENIX_PORT:-6006}:6006"             # UI and OTLP over HTTP (/v1/traces)
     volumes: [phoenix_data:/mnt/data]
