@@ -31,11 +31,26 @@ jobs:
 
   unit:
     runs-on: ubuntu-latest
+    services:
+      db:   # same image and credentials as the db service in docker-compose.yml
+        image: pgvector/pgvector:pg18
+        env:
+          POSTGRES_USER: ai4all
+          POSTGRES_PASSWORD: ai4all
+          POSTGRES_DB: ai4all
+        ports: ["5432:5432"]
+        options: >-
+          --health-cmd "pg_isready -U ai4all -d ai4all"
+          --health-interval 5s --health-timeout 3s --health-retries 10
+    env:
+      DATABASE_URL: postgresql://ai4all:ai4all@localhost:5432/ai4all
+      TRACING_BACKEND: none   # no Phoenix on the runner
     steps:
       - uses: actions/checkout@v4
       - uses: astral-sh/setup-uv@v6
         with: { python-version: "3.12" }
       - run: uv sync --frozen
+      - run: uv run python -m data.seed --small   # the rows the AMS tool tests rely on
       - run: uv run pytest -q   # unit tests, no model calls
 
   eval-gate:
