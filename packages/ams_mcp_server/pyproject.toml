@@ -2,7 +2,11 @@
 name = "ams-mcp-server"
 version = "0.1.0"
 requires-python = ">=3.12"
-dependencies = ["mcp>=2.0", "psycopg[binary]>=3.2"]
+dependencies = [
+    "mcp>=2.0",
+    "psycopg[binary]>=3.2",
+    "voyageai>=0.6.0",
+]
 
 [build-system]
 requires = ["hatchling"]

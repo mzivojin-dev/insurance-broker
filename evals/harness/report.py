@@ -18,6 +18,8 @@ import json
 import sys
 from pathlib import Path
 from typing import Any
+from dotenv import load_dotenv
+load_dotenv()  # sets DATABASE_URL, OPENAI_API_KEY, etc. from .
 
 GUARDED_TAGS = {"critical", "regression"}
 COST_SLACK = 1.20

@@ -8,7 +8,8 @@ from pathlib import Path
 
 from evals.harness.case import AGENTS, load_cases
 from evals.harness.runner import results_doc, run_suite
-
+from dotenv import load_dotenv
+load_dotenv()  # sets DATABASE_URL, OPENAI_API_KEY, etc. from .env
 
 def main() -> None:
     p = argparse.ArgumentParser(description=__doc__)

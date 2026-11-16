@@ -1,19 +1,40 @@
 """Exposes the agency database to all three agents as MCP tools. The rules live here."""
 
 import json
-
+import voyageai
 from mcp.server.mcpserver import MCPServer
 
 from ams_mcp_server.db import audit, conn
 
 mcp = MCPServer("ams")
 TOOLS: dict = {}   # name -> function, so agents in the same process can call tools directly
-
+vo = voyageai.Client()
 
 def register(fn):
     TOOLS[fn.__name__] = fn
     return mcp.tool()(fn)
 
+@register
+def search_policy_docs(client_id: str, query: str, k: int = 5) -> list[dict]:
+    """Search this client's own policy documents. Returns clauses with source_doc to cite."""
+    qvec = str(vo.embed([query], model="voyage-3.5", input_type="query").embeddings[0])
+    sql = """
+    WITH mine AS (
+      SELECT ch.* FROM policy_chunks ch JOIN policies p USING (policy_id)
+      WHERE p.client_id = %(cid)s                                   -- filter BEFORE ranking
+    ),
+    vec AS (SELECT id, row_number() OVER (ORDER BY embedding <=> %(q)s::vector) r FROM mine LIMIT 20),
+    kw  AS (SELECT id, row_number() OVER (ORDER BY ts_rank(tsv, plainto_tsquery('english', %(t)s)) DESC) r
+            FROM mine WHERE tsv @@ plainto_tsquery('english', %(t)s) LIMIT 20)
+    SELECT m.source_doc, m.content,
+           coalesce(1.0 / (60 + vec.r), 0) + coalesce(1.0 / (60 + kw.r), 0) AS score
+    FROM mine m LEFT JOIN vec USING (id) LEFT JOIN kw USING (id)
+    WHERE vec.id IS NOT NULL OR kw.id IS NOT NULL
+    ORDER BY score DESC LIMIT %(k)s
+    """
+    audit("search_policy_docs", client_id, {"query": query})
+    with conn() as c:
+        return c.execute(sql, {"cid": client_id, "q": qvec, "t": query, "k": k}).fetchall()
 
 @register
 def get_client_policies(client_id: str) -> list[dict]:

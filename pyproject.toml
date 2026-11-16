@@ -65,6 +65,8 @@ ignore_missing_imports = true
 
 [tool.pytest.ini_options]
 testpaths = ["agents", "packages", "evals/harness"]  # never evals/test_evals.py
+pythonpath = ["."]   # data.* and evals.* are repo folders, not installed packages
+addopts = ["-p", "no:langsmith_plugin"]
 env = [
     "D:TRACING_BACKEND=phoenix",   # CI sets none
     # the docker compose database; D: keeps a DATABASE_URL that is already set

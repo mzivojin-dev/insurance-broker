@@ -1,6 +1,7 @@
 # Local stack: replaces a cloud staging environment.
 #   docker compose up -d --build            # db + seed (--small) + 3 agents + gateway
 #   SEED_ARGS=--large docker compose up -d  # bigger synthetic book
+#   uv run python -m client_service.ingest  # embed the seeded policy PDFs (needs VOYAGE_API_KEY, DATABASE_URL)
 #   scripts/smoke_check.sh http://localhost:8080
 #   uv run python -m evals.harness.run --agent client_service --target http://localhost:8080/client_service
 #   docker compose up -d phoenix            # just the trace UI, for agents run on the host
@@ -41,7 +42,7 @@ services:
 
   seed:
     build: { context: ., dockerfile: data/seed/Dockerfile }
-    command: ${SEED_ARGS:---small}
+    command: ${SEED_ARGS:---large}
     environment:
       DATABASE_URL: postgresql://ai4all:ai4all@db:5432/ai4all
     volumes: ["./data/docs/out:/app/data/docs/out"]
