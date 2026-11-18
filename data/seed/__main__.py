@@ -56,6 +56,19 @@ CREATE TABLE IF NOT EXISTS claims (
 );
 """
 
+SCHEMA += """CREATE TABLE IF NOT EXISTS audit_log (
+  id bigserial PRIMARY KEY, at timestamptz DEFAULT now(),
+  tool text NOT NULL, caller text NOT NULL, args jsonb NOT NULL, approval text
+);
+CREATE TABLE IF NOT EXISTS approvals (
+  token text PRIMARY KEY, submission_id text NOT NULL, approved_by text NOT NULL,
+  expires_at timestamptz NOT NULL, used_at timestamptz
+);
+CREATE TABLE IF NOT EXISTS submissions (
+  submission_id text PRIMARY KEY, payload jsonb NOT NULL, created_at timestamptz DEFAULT now()
+);"""
+
+
 CLIENTS = [
     ("C-1042", "Dana Whitfield", "personal"),
     ("C-2001", "Marcus Lee", "personal"),

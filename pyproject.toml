@@ -66,5 +66,7 @@ ignore_missing_imports = true
 [tool.pytest.ini_options]
 testpaths = ["agents", "packages", "evals/harness"]  # never evals/test_evals.py
 env = [
-    "TRACING_BACKEND=phoenix"
+    "D:TRACING_BACKEND=phoenix",   # CI sets none
+    # the docker compose database; D: keeps a DATABASE_URL that is already set
+    "D:DATABASE_URL=postgresql://ai4all:ai4all@localhost:5432/ai4all",
 ]
