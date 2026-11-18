@@ -2,9 +2,9 @@
 
 from typing import Any
 
-from fastapi import FastAPI
+from fastapi import Depends, FastAPI
 
-from agent_core.http import StripPrefix
+from agent_core.http import StripPrefix, require_eval_key
 from book_analyst.agent import run
 
 app = FastAPI(title="book_analyst")
@@ -16,6 +16,6 @@ def health() -> dict[str, str]:
     return {"status": "ok"}
 
 
-@app.post("/run")
+@app.post("/run", dependencies=[Depends(require_eval_key)])   # harness only
 def run_endpoint(case_input: dict[str, Any]) -> dict[str, Any]:
     return run(case_input).to_dict()

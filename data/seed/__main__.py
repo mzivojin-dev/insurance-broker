@@ -11,6 +11,7 @@ import os
 
 import psycopg
 
+from data.docs.small_policies import write_small_policies
 from data.seed.generate import CARRIERS, generate
 
 SCHEMA = """
@@ -37,6 +38,10 @@ CREATE TABLE IF NOT EXISTS policy_chunks (
     content text NOT NULL,
     embedding vector(1024)
 );
+ALTER TABLE policy_chunks ADD COLUMN IF NOT EXISTS tsv tsvector
+  GENERATED ALWAYS AS (to_tsvector('english', content)) STORED;
+CREATE INDEX IF NOT EXISTS policy_chunks_tsv ON policy_chunks USING gin (tsv);
+CREATE INDEX IF NOT EXISTS policy_chunks_vec ON policy_chunks USING hnsw (embedding vector_cosine_ops);
 """
 
 SCHEMA += """
@@ -106,6 +111,7 @@ def main() -> None:
         else:
             # Use small dataset (no carrier assigned)
             clients, policies, claims = CLIENTS, [(*p, None) for p in POLICIES], []
+            write_small_policies()   # their PDFs; embed with: python -m client_service.ingest
 
         conn.cursor().executemany(
             "INSERT INTO carriers VALUES (%s, %s) ON CONFLICT DO NOTHING", CARRIERS

@@ -6,8 +6,10 @@ from reportlab.pdfgen import canvas
 OUT = Path(__file__).parent / "out"
 
 
-def policy_pdf(client_id: str, policy_id: str, sections: dict[str, str], ugly: bool = False) -> Path:
-    path = OUT / "policies" / client_id / f"{policy_id}.pdf"
+def policy_pdf(client_id: str, policy_id: str, sections: dict[str, str], ugly: bool = False,
+               filename: str | None = None) -> Path:
+    """filename: name the file like a carrier would ("HO3-2026"); defaults to the policy ID."""
+    path = OUT / "policies" / client_id / f"{filename or policy_id}.pdf"
     path.parent.mkdir(parents=True, exist_ok=True)
     c = canvas.Canvas(str(path), pagesize=LETTER)
     y = 740
@@ -21,7 +23,7 @@ def policy_pdf(client_id: str, policy_id: str, sections: dict[str, str], ugly: b
         y -= 10
     c.save()
     if ugly:
-        make_ugly(path, OUT / "policies" / client_id / f"{policy_id}_ugly.pdf")       
+        make_ugly(path, path.with_name(f"{path.stem}_ugly.pdf"))
 
     return path
 
