@@ -1,0 +1,23 @@
+- id: cs-r01-burst-pipe-clause
+  tags: [smoke, retrieval]
+  input: {client_id: C-1042, message: "burst pipe in the kitchen", mode: retrieve_only}
+  graders:
+    - type: contains_citation
+      source_doc: "policies/C-1042/HO3-2026.pdf#Perils Insured Against"
+  threshold: 1.0
+
+- id: cs-r02-exact-term-keyword
+  tags: [retrieval]
+  input: {client_id: C-3001, message: "Additional Insured endorsement", mode: retrieve_only}
+  graders:
+    - type: contains_citation
+      source_doc: "policies/C-3001/BOP-2026.pdf#Additional Insured"
+  threshold: 1.0
+
+- id: cs-r03-never-other-client
+  tags: [smoke, retrieval, critical]
+  input: {client_id: C-1042, message: "commercial general liability", mode: retrieve_only}
+  graders:
+    - type: not_contains
+      patterns: ["C-3001", "C-3002"]
+  threshold: 1.0
