@@ -28,7 +28,9 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: .env for compose
-        run: echo "ANTHROPIC_API_KEY=${{ secrets.ANTHROPIC_API_KEY }}" > .env
+        run: |
+          echo "ANTHROPIC_API_KEY=${{ secrets.ANTHROPIC_API_KEY }}" > .env
+          echo "EVAL_KEY=$(openssl rand -hex 24)" >> .env   # for --target evals against the stack (EP13)
       - name: compose up
         # returns once the gateway starts, i.e. after seed finished and all agents are healthy
         run: docker compose up -d --build
@@ -63,7 +65,8 @@ jobs:
         # Prod is destroyed daily, so these may not exist yet. Create only them, push images and
         # the key, then apply everything so the tasks start with both already in place.
         run: |
-          targets=(-target=aws_secretsmanager_secret.anthropic -target=aws_secretsmanager_secret.phoenix)
+          targets=(-target=aws_secretsmanager_secret.anthropic -target=aws_secretsmanager_secret.phoenix
+                   -target=aws_secretsmanager_secret.eval_key)
           for a in $AGENTS; do targets+=(-target="module.services[\"$a\"].aws_ecr_repository.this"); done
           terraform apply -input=false -auto-approve "${targets[@]}"
 
@@ -87,6 +90,14 @@ jobs:
                 '{secret: $s, admin_secret: $a, admin_password: $p}' |
             aws secretsmanager put-secret-value --secret-id ai4all-prod/phoenix \
               --secret-string file:///dev/stdin >/dev/null
+
+      - name: generate the eval key (first deploy of the day only)
+        # Gates POST /<agent>/run. Same reasoning as the Phoenix keys: don't rotate under running tasks.
+        run: |
+          if aws secretsmanager get-secret-value --secret-id ai4all-prod/eval-key >/dev/null 2>&1; then
+            echo "eval key already set"; exit 0
+          fi
+          aws secretsmanager put-secret-value --secret-id ai4all-prod/eval-key             --secret-string "$(openssl rand -hex 24)" >/dev/null
 
       - id: ecr
         uses: aws-actions/amazon-ecr-login@v2

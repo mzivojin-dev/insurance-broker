@@ -72,6 +72,25 @@ resource "aws_secretsmanager_secret" "phoenix" {
   recovery_window_in_days = var.ephemeral ? 0 : 30
 }
 
+# Gate for POST /<agent>/run, the eval harness endpoint, which trusts its body (agent_core.http).
+# deploy.yml generates the value on the first deploy of the day. Remote evals read it with
+#   export EVAL_KEY=$(aws secretsmanager get-secret-value --secret-id ai4all-prod/eval-key --query SecretString --output text)
+resource "aws_secretsmanager_secret" "eval_key" {
+  name                    = "ai4all-prod/eval-key"
+  recovery_window_in_days = var.ephemeral ? 0 : 30
+}
+
+# Chat sign-in lives in the long-lived identity stack (infra/envs/identity) so users survive the
+# daily destroy. Apply that stack once before this one: a missing state is a plan error.
+data "terraform_remote_state" "identity" {
+  backend = "s3"
+  config = {
+    bucket = "ai4all-tf-state-${data.aws_caller_identity.me.account_id}"
+    key    = "identity/terraform.tfstate"
+    region = "us-east-1"
+  }
+}
+
 resource "aws_security_group" "alb" {
   name   = "ai4all-prod-alb"
   vpc_id = module.vpc.vpc_id
@@ -180,9 +199,12 @@ module "services" {
     PGSSLMODE                  = "require"
     TRACING_BACKEND            = "phoenix"
     PHOENIX_COLLECTOR_ENDPOINT = module.phoenix.collector_endpoint
+    COGNITO_USER_POOL_ID       = data.terraform_remote_state.identity.outputs.user_pool_id
+    COGNITO_CLIENT_ID          = data.terraform_remote_state.identity.outputs.web_client_id
   }
   secrets = {
     ANTHROPIC_API_KEY = aws_secretsmanager_secret.anthropic.arn
+    EVAL_KEY          = aws_secretsmanager_secret.eval_key.arn
     PGUSER            = "${module.db.master_secret_arn}:username::"
     PGPASSWORD        = "${module.db.master_secret_arn}:password::"
     PHOENIX_API_KEY   = "${aws_secretsmanager_secret.phoenix.arn}:admin_secret::" # bearer token for ingest

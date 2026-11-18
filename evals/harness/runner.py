@@ -10,6 +10,7 @@ from __future__ import annotations
 
 import importlib
 import json
+import os
 import time
 import urllib.request
 from dataclasses import dataclass, field
@@ -70,7 +71,9 @@ def call_agent(agent: str, case: Case, target: str | None = None) -> Transcript:
         req = urllib.request.Request(
             target.rstrip("/") + "/run",
             data=json.dumps(case.agent_input()).encode(),
-            headers={"Content-Type": "application/json"},
+            # /run refuses callers without the key; prod's is in Secrets Manager: ai4all-prod/eval-key
+            headers={"Content-Type": "application/json",
+                     "X-Eval-Key": os.environ.get("EVAL_KEY", "")},
         )
         with urllib.request.urlopen(req, timeout=120) as resp:
             return Transcript.from_dict(json.load(resp))
